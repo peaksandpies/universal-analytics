@@ -1,5 +1,5 @@
 {
-  "name": "node-ua",
+  "name": "universal-analytics",
   "version": "0.0.1",
   "description": "A node module for Google's Universal Analytics tracking",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jtillmann/node-ua.git"
+    "url": "git@github.com:jtillmann/universal-analytics.git"
   },
   "keywords": [
     "google",
