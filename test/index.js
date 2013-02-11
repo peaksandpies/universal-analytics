@@ -201,8 +201,10 @@ describe("ua", function () {
 
 		it("should accept arguments (params, fn)", function () {
 			var params = {
-				dp: "/" + Math.random()
+				dp: "/" + Math.random(),
+				empty: null // Should be removed
 			};
+			var json = JSON.stringify(params)
 			var fn = sinon.spy()
 
 			ua("UA-XXXXX-XX").pageview(params, fn)
@@ -213,6 +215,8 @@ describe("ua", function () {
 			_enqueue.args[0][1].dp.should.equal(params.dp);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once");
+
+			JSON.stringify(params).should.equal(json, "params should not have been modified")
 		});
 
 		it("should accept arguments (path, params, fn)", function () {
@@ -851,8 +855,10 @@ describe("ua", function () {
 				ts: Math.random(),
 				tt: Math.random(),
 				ta: Math.random().toString(),
-				p: Math.random().toString()
+				p: Math.random().toString(),
+				empty: null // Should be removed
 			};
+			var json = JSON.stringify(params);
 
 			var visitor = ua()
 
@@ -873,6 +879,8 @@ describe("ua", function () {
 			_enqueue.args[0][1].tt.should.equal(params.tt);
 			_enqueue.args[0][1].ta.should.equal(params.ta);
 			_enqueue.args[0][1].p.should.equal(params.p);
+
+			JSON.stringify(params).should.equal(json, "params should not have changed");
 		});
 
 
