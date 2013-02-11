@@ -3,7 +3,7 @@ universal-analytics
 
 A node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
 
-This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not required any more tracking in the browser.
+This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
 
 `universal-analytics` currently supports the following tracking features:
 
@@ -96,14 +96,14 @@ visitor.pageview(pagePath, function (err) {
 
 The following method signatures are available for the `pageview()` method of the Visitor instance:
 
-* `Visitor#pageview(path)
-* `Visitor#pageview(path, callback)
-* `Visitor#pageview(params)
-* `Visitor#pageview(params, callback)
-* `Visitor#pageview(path, hostname)
-* `Visitor#pageview(path, hostname, callback)
-* `Visitor#pageview(path, hostname, title)
-* `Visitor#pageview(path, hostname, title, callback)
+* `Visitor#pageview(path)`
+* `Visitor#pageview(path, callback)`
+* `Visitor#pageview(params)`
+* `Visitor#pageview(params, callback)`
+* `Visitor#pageview(path, hostname)`
+* `Visitor#pageview(path, hostname, callback)`
+* `Visitor#pageview(path, hostname, title)`
+* `Visitor#pageview(path, hostname, title, callback)`
 
 ## Event tracking
 
@@ -150,6 +150,16 @@ var params = {
 }
 
 visitor.event(params).send();
+```
+
+The category (`ec`) and the action (`ea`) are mandatory. Google Analytics will not track an event without them. To avoid such erroneous requests, universal-analytics will deny `event()` tracking if either attribute is omitted.
+
+```javascript
+var action = null;
+
+visitor.event("Navigation clicks", action, function (err) {
+  // This callback will receive an error
+});
 ```
 
 The following method signatures are available for #event:
@@ -246,6 +256,15 @@ In case an additional item has to be added later on or daisy-chaining is not ava
 
 visitor.item({ip: 100, iq: 1, ic: "item-41325", in: "Item 41325", iv: "XL", ti: "trans-12345"}).send()
 
+The transaction ID (`ti`) is mandatory for both the transaction and the item. Google Analytics will not track e-commerce data without it. To avoid such erroneous requests, universal-analytics will deny `transaction()` and `item()` tracking if it is omitted.
+
+```javascript
+var ti = null;
+
+visitor.transaction(ti, function (err) {
+  // This callback will receive an error
+});
+```
 
 The following method signatures are available for #transaction:
 
