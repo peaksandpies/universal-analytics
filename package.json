@@ -1,6 +1,6 @@
 {
   "name": "universal-analytics",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
