@@ -16,7 +16,7 @@ This module allows tracking data (or rather, users) from within a Node.js applic
 `universal-analytics` is installed and included like any other node module:
 
 ```
-npm install `universal-analytics`
+$ npm install universal-analytics
 ```
 
 ```javascript
