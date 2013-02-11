@@ -102,8 +102,8 @@ The following method signatures are available for the `pageview()` method of the
 * `Visitor#pageview(params, callback)`
 * `Visitor#pageview(path, hostname)`
 * `Visitor#pageview(path, hostname, callback)`
-* `Visitor#pageview(path, hostname, title)`
-* `Visitor#pageview(path, hostname, title, callback)`
+* `Visitor#pageview(path, title, hostname)`
+* `Visitor#pageview(path, title, hostname, callback)`
 
 ## Event tracking
 
@@ -146,7 +146,7 @@ var params = {
   ea: "Event Action",
   el: "…and a label",
   ev: 42,
-  d: "/contact"
+  dp: "/contact"
 }
 
 visitor.event(params).send();
@@ -216,7 +216,7 @@ visitor.pageview("/landing-page-1", function (err) {
 });
 ```
 
-More generally, the daisy-chaining context keeps all parameters from the previous call around. This means in a situation where a similar tracking calls are necessary, the tracking is simplified:
+More generally, the daisy-chaining context keeps all parameters from the previous call around. This means in a situation where similar tracking calls are necessary tracking is simplified:
 
 ```javascript
 visitor
@@ -284,20 +284,19 @@ The following method signatures are available for #transaction:
 The following method signatures are available for #item:
 
 * `Visitor#item(price)`
-* `Visitor#item(price, fn)`
+* `Visitor#item(price, callback)`
 * `Visitor#item(price, quantity)`
-* `Visitor#item(price, quantity, fn)`
+* `Visitor#item(price, quantity, callback)`
 * `Visitor#item(price, quantity, sku)`
-* `Visitor#item(price, quantity, sku, fn)`
+* `Visitor#item(price, quantity, sku, callback)`
 * `Visitor#item(price, quantity, sku, name)`
-* `Visitor#item(price, quantity, sku, name, fn)`
+* `Visitor#item(price, quantity, sku, name, callback)`
 * `Visitor#item(price, quantity, sku, name, variation)`
-* `Visitor#item(price, quantity, sku, name, variation, fn)`
+* `Visitor#item(price, quantity, sku, name, variation, callback)`
 * `Visitor#item(price, quantity, sku, name, variation, params)`
-* `Visitor#item(price, quantity, sku, name, variation, params, fn)`
-* `Visitor#item(price, quantity, sku, name, variation, params, fn)`
-* `Visitor#item(params, fn)`
-* `Visitor#item(params, fn)`
+* `Visitor#item(price, quantity, sku, name, variation, params, callback)`
+* `Visitor#item(params)`
+* `Visitor#item(params, callback)`
 
 
 ## Debug mode
