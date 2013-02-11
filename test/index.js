@@ -13,106 +13,106 @@ var config = require("../lib/config.js")
 
 describe("ua", function () {
 
-	// it("should be usable as a function", function () {
-	// 	ua("foo").should.be.instanceof(ua.Visitor);
-	// });
+	it("should be usable as a function", function () {
+		ua("foo").should.be.instanceof(ua.Visitor);
+	});
 
-	// it("should be usable as a constructor", function () {
-	// 	new ua("foo").should.be.instanceof(ua.Visitor);
-	// });
+	it("should be usable as a constructor", function () {
+		new ua("foo").should.be.instanceof(ua.Visitor);
+	});
 
-	// it("should accept arguments (tid, cid, options)", function () {
-	// 	var tid = "UA-XXXXX-XX"
-	// 	var cid = uuid.v4()
-	// 	var options = {};
+	it("should accept arguments (tid, cid, options)", function () {
+		var tid = "UA-XXXXX-XX"
+		var cid = uuid.v4()
+		var options = {};
 
-	// 	var visitor = ua(tid, cid, options)
+		var visitor = ua(tid, cid, options)
 
-	// 	visitor.tid.should.equal(tid)
-	// 	visitor.cid.should.equal(cid)
-	// 	visitor.options.should.equal(options)
-	// });
+		visitor.tid.should.equal(tid)
+		visitor.cid.should.equal(cid)
+		visitor.options.should.equal(options)
+	});
 
-	// it("should accept arguments (tid, cid)", function () {
-	// 	var tid = "UA-XXXXX-XX"
-	// 	var cid = uuid.v4()
+	it("should accept arguments (tid, cid)", function () {
+		var tid = "UA-XXXXX-XX"
+		var cid = uuid.v4()
 
-	// 	var visitor = ua(tid, cid)
+		var visitor = ua(tid, cid)
 
-	// 	visitor.tid.should.equal(tid)
-	// 	visitor.cid.should.equal(cid)
-	// 	visitor.options.should.eql({}, "An empty options hash should've been created")
-	// });
+		visitor.tid.should.equal(tid)
+		visitor.cid.should.equal(cid)
+		visitor.options.should.eql({}, "An empty options hash should've been created")
+	});
 
-	// it("should accept arguments (tid, options)", function () {
-	// 	var tid = Math.random().toString();
-	// 	var options = {}
+	it("should accept arguments (tid, options)", function () {
+		var tid = Math.random().toString();
+		var options = {}
 
-	// 	var visitor = ua(tid, options)
+		var visitor = ua(tid, options)
 
-	// 	visitor.tid.should.equal(tid)
-	// 	utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
-	// 	visitor.options.should.eql(options)
+		visitor.tid.should.equal(tid)
+		utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
+		visitor.options.should.eql(options)
 
-	// });
+	});
 
-	// it("should accept arguments (options)", function () {
-	// 	var options = {}
+	it("should accept arguments (options)", function () {
+		var options = {}
 
-	// 	var visitor = ua(options);
+		var visitor = ua(options);
 
-	// 	should.not.exist(visitor.tid)
-	// 	utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
-	// 	visitor.options.should.eql(options)
-	// });
+		should.not.exist(visitor.tid)
+		utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
+		visitor.options.should.eql(options)
+	});
 
-	// it("should accept tid and cid via the options arguments", function () {
-	// 	var options = {
-	// 		tid: "UA-XXXXX-XX",
-	// 		cid: uuid.v4()
-	// 	};
+	it("should accept tid and cid via the options arguments", function () {
+		var options = {
+			tid: "UA-XXXXX-XX",
+			cid: uuid.v4()
+		};
 
-	// 	var visitor = ua(options);
+		var visitor = ua(options);
 
-	// 	visitor.tid.should.equal(options.tid)
-	// 	visitor.cid.should.equal(options.cid)
-	// 	visitor.options.should.equal(options)
-	// });
+		visitor.tid.should.equal(options.tid)
+		visitor.cid.should.equal(options.cid)
+		visitor.options.should.equal(options)
+	});
 
 
-	// describe("#debug", function () {
+	describe("#debug", function () {
 
-	// 	var log;
+		var log;
 
-	// 	before(function () {
-	// 		log = sinon.stub(ua.Visitor.prototype, "_log")
-	// 	});
+		before(function () {
+			log = sinon.stub(ua.Visitor.prototype, "_log")
+		});
 
-	// 	after(function () {
-	// 		log.restore();
-	// 	});
+		after(function () {
+			log.restore();
+		});
 
-	// 	it("should enable debugging when invoked without arguments", function () {
-	// 		var visitor = ua().debug()
+		it("should enable debugging when invoked without arguments", function () {
+			var visitor = ua().debug()
 
-	// 		visitor.options.debug.should.equal(true);
+			visitor.options.debug.should.equal(true);
 
-	// 		visitor.debug().should.equal(visitor, "should return itself")
+			visitor.debug().should.equal(visitor, "should return itself")
 
-	// 		visitor.options.debug.should.equal(true, "A second #debug call should leave debugging enabled");
-	// 	});
+			visitor.options.debug.should.equal(true, "A second #debug call should leave debugging enabled");
+		});
 
-	// 	it("should toggle debugging when invoked with a boolean arguments", function () {
-	// 		var visitor = ua().debug(true)
+		it("should toggle debugging when invoked with a boolean arguments", function () {
+			var visitor = ua().debug(true)
 
-	// 		visitor.options.debug.should.equal(true);
+			visitor.options.debug.should.equal(true);
 
-	// 		visitor.debug(false).should.equal(visitor, "should return itself")
+			visitor.debug(false).should.equal(visitor, "should return itself")
 
-	// 		visitor.options.debug.should.equal(false);
-	// 	});
+			visitor.options.debug.should.equal(false);
+		});
 
-	// });
+	});
 
 
 
@@ -636,6 +636,63 @@ describe("ua", function () {
 			visitor._enqueue(type);
 
 			visitor._queue.length.should.equal(4, "4 tracking calls should have been enqueued");
+		})
+
+	});
+
+	describe("#send", function () {
+		var post;
+
+		beforeEach(function () {
+			post = sinon.stub(request, "post").callsArg(1);
+		});
+
+		afterEach(function () {
+			post.restore()
+		});
+
+		it("should immidiately return with an empty queue", function () {
+			var visitor = ua();
+			var fn = sinon.spy();
+
+			visitor.send(fn);
+
+			post.called.should.equal(false, "no request should have been sent")
+			fn.calledOnce.should.equal(true, "callback should have been called once")
+			fn.thisValues[0].should.equal(visitor, "callback should be called in the context of the visitor instance");
+		});
+
+		it("should stringify and POST each params object in the queue in order", function (done) {
+			var paramSets = [
+				{first: Math.random()},
+				{second: Math.random()},
+				{third: Math.random()}
+			]
+
+			var fn = sinon.spy(function () {
+				fn.calledOnce.should.equal(true, "callback should have been called once")
+				fn.thisValues[0].should.equal(visitor, "callback should be called in the context of the visitor instance");
+
+				post.callCount.should.equal(paramSets.length, "each param set should have been POSTed");
+
+				for (var i = 0; i < paramSets.length; i++) {
+					var params = paramSets[i];
+					var args = post.args[i];
+
+					var parsedUrl = url.parse(args[0])
+
+					Math.random(); // I have absolutely no idea why it fails unless there was some processing to be done after url.parse…
+
+					(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
+					parsedUrl.query.should.equal(qs.stringify(params));
+				}
+
+				done()
+			});
+
+			var visitor = ua();
+			visitor._queue.push.apply(visitor._queue, paramSets)
+			visitor.send(fn);
 		})
 
 	})
