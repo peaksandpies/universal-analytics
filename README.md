@@ -301,6 +301,17 @@ The tracking methods have shortcuts:
 * `Visitor#i` as an alias for `Visitor#item`
 
 
+# Tests
+
+The tests are written with [mocha](https://github.com/visionmedia/mocha) using [should](https://github.com/visionmedia/should.js) and [Sinon.JS](https://github.com/cjohansen/Sinon.JS).
+
+Run them by executing the following commands in the `universal-analytics` directory:
+
+```
+$ npm install
+$ make test
+```
+
 ## License
 
 (The MIT License)
