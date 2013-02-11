@@ -1,4 +1,4 @@
-`universal-analytics`
+universal-analytics
 =======
 
 A node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
@@ -180,7 +180,7 @@ Every call of a tracking method returns a visitor instance you can re-use:
 visitor.pageview("/").pageview("/contact").send()
 ```
 
-Granted, the chance of this example actually happening in practice might be rather low. 
+Granted, the chance of this example actually happening in practice might be rather low.
 
 However, `universal-analytics` is smart when it comes to daisy-chaining certain calls. In many cases, a `pageview()` call is instantly followed by an `event()` call to track some additional information about the current page. `universal-analytics` makes creating the connection between the two easy:
 
@@ -215,7 +215,7 @@ visitor
   .send();
 ```
 
-In this example the event category ("Mail Server") is not repeated in the second tracking call. 
+In this example the event category ("Mail Server") is not repeated in the second tracking call.
 
 
 ### E-commerce tracking
