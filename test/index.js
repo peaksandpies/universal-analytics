@@ -133,6 +133,13 @@ describe("ua", function () {
 			_enqueue.restore()
 		});
 
+
+		it("should be available via the #pv shortcut", function () {
+			var visitor = ua()
+			visitor.pv.should.equal(visitor.pageview)
+		});
+
+
 		it("should accept arguments (path)", function () {
 			var path = "/" + Math.random()
 
@@ -323,6 +330,13 @@ describe("ua", function () {
 		afterEach(function () {
 			_enqueue.restore()
 		});
+
+
+		it("should be available via the #e shortcut", function () {
+			var visitor = ua()
+			visitor.e.should.equal(visitor.event)
+		});
+
 
 		it("should accept arguments (category, action)", function () {
 			var category = Math.random().toString();
@@ -616,6 +630,12 @@ describe("ua", function () {
 
 		afterEach(function () {
 			_enqueue.restore()
+		});
+
+
+		it("should be available via the #t shortcut", function () {
+			var visitor = ua()
+			visitor.t.should.equal(visitor.transaction)
 		});
 
 
@@ -958,6 +978,12 @@ describe("ua", function () {
 
 		afterEach(function () {
 			_enqueue.restore()
+		});
+
+
+		it("should be available via the #i shortcut", function () {
+			var visitor = ua()
+			visitor.i.should.equal(visitor.item)
 		});
 
 
