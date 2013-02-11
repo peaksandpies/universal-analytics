@@ -291,7 +291,7 @@ describe("ua", function () {
 			result.should.eql(visitor, "should return a visitor that is identical except for the context");
 
 			result.should.be.instanceof(ua.Visitor);
-			should.not.exist(result._context, "the transaction params should not be persisted")
+			result._context.should.eql({}, "the transaction params should not be persisted")
 
 			_enqueue.called.should.equal(false, "#_enqueue should have not been called once");
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -566,7 +566,7 @@ describe("ua", function () {
 			result.should.eql(visitor, "should return a visitor that is identical except for the context");
 
 			result.should.be.instanceof(ua.Visitor);
-			should.not.exist(result._context, "the transaction params should not be persisted")
+			result._context.should.eql({}, "the transaction params should not be persisted")
 
 			_enqueue.called.should.equal(false, "#_enqueue should have not been called once");
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -585,7 +585,7 @@ describe("ua", function () {
 			result.should.eql(visitor, "should return a visitor that is identical except for the context");
 
 			result.should.be.instanceof(ua.Visitor);
-			should.not.exist(result._context, "the transaction params should not be persisted")
+			result._context.should.eql({}, "the transaction params should not be persisted")
 
 			_enqueue.called.should.equal(false, "#_enqueue should have not been called once");
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -920,7 +920,7 @@ describe("ua", function () {
 			result.should.eql(visitor, "should return a visitor that is identical except for the context");
 
 			result.should.be.instanceof(ua.Visitor);
-			should.not.exist(result._context, "the transaction params should not be persisted")
+			result._context.should.eql({}, "the transaction params should not be persisted")
 
 			_enqueue.called.should.equal(false, "#_enqueue should have not been called once");
 			fn.calledOnce.should.equal(true, "callback should have been called once");
