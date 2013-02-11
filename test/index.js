@@ -159,6 +159,30 @@ describe("ua", function () {
 			_enqueue.args[0][1].dp.should.equal(path);
 		});
 
+
+		it("should accept arguments (path, fn)", function () {
+			var path = "/" + Math.random();
+			var fn = sinon.spy();
+
+			var visitor = ua("UA-XXXXX-XX")
+
+			var result = visitor.pageview(path, fn)
+
+			visitor._context = result._context;
+			result.should.eql(visitor, "should return a visitor that is identical except for the context");
+
+			result.should.be.instanceof(ua.Visitor);
+			result._context.should.eql(_enqueue.args[0][1], "the pageview params should be persisted as the context of the visitor clone")
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("pageview");
+			_enqueue.args[0][1].should.have.keys(["dp"]);
+			_enqueue.args[0][1].dp.should.equal(path);
+
+			fn.calledOnce.should.equal(true, "callback should have been called once");
+		});
+
+
 		it("should accept arguments (params)", function () {
 			var params = {
 				dp: "/" + Math.random()
@@ -180,32 +204,6 @@ describe("ua", function () {
 			_enqueue.args[0][1].dp.should.equal(params.dp);
 		});
 
-		it("should accept arguments (path, params)", function () {
-			var title = Math.random().toString();
-
-			ua("UA-XXXXX-XX").pageview("/", {
-				dt: title
-			})
-
-			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
-			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dt"]);
-			_enqueue.args[0][1].dt.should.equal(title);
-		});
-
-		it("should accept arguments (path, fn)", function () {
-			var path = "/" + Math.random()
-			var fn = sinon.spy()
-
-			ua("UA-XXXXX-XX").pageview(path, fn)
-
-			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
-			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp"]);
-			_enqueue.args[0][1].dp.should.equal(path);
-
-			fn.calledOnce.should.equal(true, "callback should have been called once");
-		});
 
 		it("should accept arguments (params, fn)", function () {
 			var params = {
@@ -227,19 +225,67 @@ describe("ua", function () {
 			JSON.stringify(params).should.equal(json, "params should not have been modified")
 		});
 
-		it("should accept arguments (path, params, fn)", function () {
-			var path = "/" + Math.random()
-			var fn = sinon.spy();
-			var title = Math.random().toString();
 
-			ua("UA-XXXXX-XX").pageview(path, {
-				dt: title
-			}, fn)
+		it("should accept arguments (path, hostname)", function () {
+			var path = Math.random().toString();
+			var hostname = Math.random().toString();
+
+			ua("UA-XXXXX-XX").pageview(path, hostname);
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dt"]);
+			_enqueue.args[0][1].should.have.keys(["dp", "dh"]);
 			_enqueue.args[0][1].dp.should.equal(path);
+			_enqueue.args[0][1].dh.should.equal(hostname);
+		});
+
+
+		it("should accept arguments (path, hostname, fn)", function () {
+			var path = Math.random().toString();
+			var hostname = Math.random().toString();
+			var fn = sinon.spy()
+
+			ua("UA-XXXXX-XX").pageview(path, hostname, fn);
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("pageview");
+			_enqueue.args[0][1].should.have.keys(["dp", "dh"]);
+			_enqueue.args[0][1].dp.should.equal(path);
+			_enqueue.args[0][1].dh.should.equal(hostname);
+
+			fn.calledOnce.should.equal(true, "callback should have been called once");
+		});
+
+
+		it("should accept arguments (path, hostname, title)", function () {
+			var path = Math.random().toString();
+			var hostname = Math.random().toString();
+			var title = Math.random().toString();
+
+			ua("UA-XXXXX-XX").pageview(path, hostname, title);
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("pageview");
+			_enqueue.args[0][1].should.have.keys(["dp", "dh", "dt"]);
+			_enqueue.args[0][1].dp.should.equal(path);
+			_enqueue.args[0][1].dh.should.equal(hostname);
+			_enqueue.args[0][1].dt.should.equal(title);
+		});
+
+
+		it("should accept arguments (path, hostname, title, fn)", function () {
+			var path = Math.random().toString();
+			var hostname = Math.random().toString();
+			var title = Math.random().toString();
+			var fn = sinon.spy()
+
+			ua("UA-XXXXX-XX").pageview(path, hostname, title, fn);
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("pageview");
+			_enqueue.args[0][1].should.have.keys(["dp", "dh", "dt"]);
+			_enqueue.args[0][1].dp.should.equal(path);
+			_enqueue.args[0][1].dh.should.equal(hostname);
 			_enqueue.args[0][1].dt.should.equal(title);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -250,9 +296,7 @@ describe("ua", function () {
 			var path = "/" + Math.random()
 			var title = Math.random().toString();
 
-			ua("UA-XXXXX-XX").pageview(path, {
-				dt: title
-			}).pageview()
+			ua("UA-XXXXX-XX").pageview(path, null, title).pageview()
 
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for each pageview");
 
@@ -268,13 +312,13 @@ describe("ua", function () {
 			var title2 = Math.random().toString();
 			var foo = Math.random()
 
-			ua("UA-XXXXX-XX").pageview(path, {
-				dt: title
-			}).pageview({
-				dt: title2,
-				dp: path2,
-				foo: foo
-			}).pageview(path)
+			ua("UA-XXXXX-XX")
+				.pageview(path, null, title)
+				.pageview({
+					dt: title2,
+					dp: path2,
+					foo: foo
+				}).pageview(path)
 
 			_enqueue.calledThrice.should.equal(true, "#_enqueue should have been called three times, once for each pageview");
 
@@ -287,10 +331,9 @@ describe("ua", function () {
 			_enqueue.args[1][1].dt.should.equal(title2);
 			_enqueue.args[1][1].foo.should.equal(foo);
 
-			_enqueue.args[2][1].should.have.keys(["dp", "dt", "foo"]);
+			_enqueue.args[2][1].should.have.keys(["dp", "dt"]);
 			_enqueue.args[2][1].dp.should.equal(path);
 			_enqueue.args[2][1].dt.should.equal(title2);
-			_enqueue.args[2][1].foo.should.equal(foo);
 		})
 
 		it("should fail without page path", function () {
@@ -514,6 +557,26 @@ describe("ua", function () {
 			_enqueue.args[0][1].p.should.equal(params.p);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once")
+		});
+
+		it("should use the dp attribute as p for providing a event path", function () {
+			var params = {
+				ec: Math.random().toString(),
+				ea: Math.random().toString(),
+				"dp": "/" + Math.random(),
+			}
+			var json = JSON.stringify(params)
+
+			ua().event(params);
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("event");
+			_enqueue.args[0][1].should.have.keys(["ec", "ea", "p"]);
+			_enqueue.args[0][1].ec.should.equal(params.ec);
+			_enqueue.args[0][1].ea.should.equal(params.ea);
+			_enqueue.args[0][1].p.should.equal(params.dp);
+
+			JSON.stringify(params).should.equal(json, "params should not have been modified")
 		});
 
 
