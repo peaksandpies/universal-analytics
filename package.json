@@ -1,6 +1,6 @@
 {
   "name": "universal-analytics",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
@@ -28,5 +28,5 @@
     "mocha": "*"
   },
   "author": "Jörg Tillmann <mail@joergtillmann.com>",
-  "license": "BSD"
+  "license": "MIT"
 }
