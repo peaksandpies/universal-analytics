@@ -11,6 +11,8 @@ This module allows tracking data (or rather, users) from within a Node.js applic
 * Events
 * E-Commerce with transactions and items
 
+[![Build Status](https://travis-ci.org/jtillmann/universal-analytics.png?branch=master)](https://travis-ci.org/jtillmann/universal-analytics)
+
 ## Getting started
 
 `universal-analytics` is installed and included like any other node module:
