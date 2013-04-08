@@ -301,6 +301,57 @@ The following method signatures are available for #item:
 * `Visitor#item(params, callback)`
 
 
+### Exception tracking
+
+Exception tracking is a way to keep track of any sort of application errors and bugs with Google Analytics. Using it with this module is a way to capture server-side problems.
+
+```javascript
+visitor.exception("StackOverflow Error").send()
+```
+
+As an additional information, the exception can be flagged as fatal if the error was exceptionally bad.
+
+```javascript
+var fatal = true;
+visitor.exception("StackOverflow Error", fatal, function () {
+  // Finish handling this error
+});
+```
+
+The following method signatures are available for #exception:
+
+* `Visitor#exception(description)`
+* `Visitor#exception(description, callback)`
+* `Visitor#exception(description, fatal)`
+* `Visitor#exception(description, fatal, callback)`
+* `Visitor#exception(params)`
+* `Visitor#exception(params, callback)`
+
+
+
+### User timing tracking
+
+Tracking user timings is a way to capture time-based information similar to the page load speed data tracked automatically by Google Analytics. All arguments to this tracking method are optional, but a category, a variable and a time value should be provided. The time value should be provided in milliseconds.
+
+```javascript
+visitor.timinig("User interaction", "Time to open login overlay", 12547).send()
+```
+
+The following method signatures are available for #timing:
+
+* `Visitor#timing(category)`
+* `Visitor#timing(category, callback)`
+* `Visitor#timing(category, variable)`
+* `Visitor#timing(category, variable, callback)`
+* `Visitor#timing(category, variable, time)`
+* `Visitor#timing(category, variable, time, callback)`
+* `Visitor#timing(category, variable, time, label)`
+* `Visitor#timing(category, variable, time, label, callback)`
+* `Visitor#timing(params)`
+* `Visitor#timing(params, callback)`
+
+
+
 ## Debug mode
 
 `universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
