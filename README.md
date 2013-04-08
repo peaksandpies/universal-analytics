@@ -10,6 +10,8 @@ This module allows tracking data (or rather, users) from within a Node.js applic
 * Pageviews
 * Events
 * E-Commerce with transactions and items
+* Exceptions
+* User timings
 
 [![Build Status](https://travis-ci.org/jtillmann/universal-analytics.png?branch=master)](https://travis-ci.org/jtillmann/universal-analytics)
 
