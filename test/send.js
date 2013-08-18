@@ -19,7 +19,7 @@ describe("ua", function () {
 		var post;
 
 		beforeEach(function () {
-			post = sinon.stub(request, "post").callsArg(1);
+			post = sinon.stub(request, "post").callsArg(2);
 		});
 
 		afterEach(function () {
@@ -68,7 +68,33 @@ describe("ua", function () {
 			var visitor = ua();
 			visitor._queue.push.apply(visitor._queue, paramSets)
 			visitor.send(fn);
-		})
+		});
+
+		it("should add custom headers to request header", function (done) {
+			var fn = sinon.spy(function () {
+				fn.calledOnce.should.equal(true, "callback should have been called once");
+				fn.thisValues[0].should.equal(visitor, "callback should be called in the context of the visitor instance");
+
+				post.calledOnce.should.equal(true, "request should have been POSTed");
+
+				var parsedUrl = url.parse(post.args[0][0]);
+				var options = post.args[0][1];
+
+				(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
+
+				options.should.have.keys(["headers"]);
+				options.headers.should.have.key("User-Agent");
+				options.headers["User-Agent"].should.equal("Test User Agent");
+
+				done();
+			});
+
+			var visitor = ua({
+				headers: {'User-Agent': 'Test User Agent'}
+			});
+			visitor._queue.push({});
+			visitor.send(fn);
+		});
 
 	})
 
