@@ -354,6 +354,29 @@ The following method signatures are available for #timing:
 
 
 
+## Session-based identification
+
+In order to make session-based apps easier to work with, `universal-analytics` also provides a middleware that works in an Expressjs-style fashion. It will try to detect a client ID based on the `_ga` cookie used by the analytics.js client-side tracking. Additionally it will store the detected client ID in the current session to recognize the visitor later.
+
+```javascript
+var ua = require("universal-analytics");
+var express = require("express");
+
+var app = express()
+
+express.use(ua.middleware("UA-XXXX-Y", {cookieName: '_ga'}));
+```
+
+The middleware will attach the `universal analytics` visitor instance to every request (`req.visitor`).
+
+Additionally, the module also exposes a `createFromSession` method to create a visitor instance simply based on a session, which is helpful when working with Socket.io, etc. where the middleware is not used.
+
+```javascript
+var visitor = ua.createFromSession(socket.handshake.session);
+```
+
+
+
 ## Debug mode
 
 `universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
@@ -362,6 +385,7 @@ The following method signatures are available for #timing:
 var visitor = ua("UA-XXXX-XX").debug()
 // … and so forth.
 ```
+
 
 
 ## Shortcuts
