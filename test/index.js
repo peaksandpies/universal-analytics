@@ -80,7 +80,7 @@ describe("ua", function () {
 		visitor.options.should.equal(options)
 	});
 
-	it("should geneerate new cid (UUID) if provide is in wrong format", function () {
+	it("should generate new cid (UUID) if provided one is in wrong format", function () {
 		var options = {
 			tid: "UA-XXXXX-XX",
 			cid: "custom-format-cid"
