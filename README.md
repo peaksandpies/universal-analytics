@@ -39,7 +39,11 @@ This will create a `universal-analytics` Visitor instance that you can use and k
 var visitor = ua('UA-XXXX-XX', '6a14abda-6b12-4578-bf66-43c754eaeda9');
 ```
 
-Starting with Universal Analytics, a UUID v4 is the preferred user ID format. It is therefor necessary to provide a UUID of such type to `universal-analytics`.
+Starting with Universal Analytics, a UUID v4 is the preferred user ID format. It is therefor necessary to provide a UUID of such type to `universal-analytics`. However you force custom user ID, passing `strictCidFormat: false` in the options:
+
+```javascript
+var visitor = ua('UA-XXXX-XX', 'CUSTOM_USERID_1', {strictCidFormat: false});
+```
 
 Tracking a pageview without much else is now very simple:
 
