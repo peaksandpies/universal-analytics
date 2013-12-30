@@ -62,7 +62,7 @@ describe("ua", function () {
 
 		var visitor = ua(options);
 
-		should.not.exist(visitor.tid)
+		visitor.should.not.have.properties('tid')
 		utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
 		visitor.options.should.eql(options)
 	});
