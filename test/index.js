@@ -80,6 +80,41 @@ describe("ua", function () {
 		visitor.options.should.equal(options)
 	});
 
+	it("should generate new cid (UUID) if provided one is in wrong format", function () {
+		var options = {
+			tid: "UA-XXXXX-XX",
+			cid: "custom-format-cid"
+		};
+		
+		var next = sinon.spy(uuid, 'v4')
+
+		var visitor = ua(options);
+	
+		next.calledOnce.should.equal(true, "next() should've been called once")
+		var generatedCid = next.returnValues[0]
+		uuid.v4.restore()
+
+		visitor.cid.should.not.equal(options.cid)
+		visitor.cid.should.equal(generatedCid)
+	});
+
+	it("should accept custom cid format when strictCidFormat is false", function () {
+		var options = {
+			tid: "UA-XXXXX-XX",
+			cid: "custom-format-cid",
+			strictCidFormat: false
+		};
+	
+		var next = sinon.spy(uuid, 'v4')
+
+		var visitor = ua(options);
+	
+		next.called.should.equal(false, "next() should't be called")
+		uuid.v4.restore()
+
+		visitor.cid.should.equal(options.cid)
+	});
+
 
 	describe("#debug", function () {
 
