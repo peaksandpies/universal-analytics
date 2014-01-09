@@ -35,6 +35,7 @@ describe("ua", function () {
 			post.called.should.equal(false, "no request should have been sent")
 			fn.calledOnce.should.equal(true, "callback should have been called once")
 			fn.thisValues[0].should.equal(visitor, "callback should be called in the context of the visitor instance");
+			fn.args[0].should.eql([null, 0], "no error, no requests");
 		});
 
 		it("should stringify and POST each params object in the queue in order", function (done) {
@@ -47,6 +48,7 @@ describe("ua", function () {
 			var fn = sinon.spy(function () {
 				fn.calledOnce.should.equal(true, "callback should have been called once")
 				fn.thisValues[0].should.equal(visitor, "callback should be called in the context of the visitor instance");
+				fn.args[0].should.eql([null, 3], "no error, 3 requests");
 
 				post.callCount.should.equal(paramSets.length, "each param set should have been POSTed");
 
