@@ -182,8 +182,6 @@ The following method signatures are available for #event:
 * `Visitor#event(params)`
 * `Visitor#event(params, callback)`
 
-
-
 ### Daisy-chaining tracking calls
 
 We have seen basic daisy-chaining above when calling `send()` right after `pageview()` and `event()`:
@@ -379,8 +377,7 @@ Additionally, the module also exposes a `createFromSession` method to create a v
 var visitor = ua.createFromSession(socket.handshake.session);
 ```
 
-
-
+See also [a acceptable params](AcceptableParams.md).
 ## Debug mode
 
 `universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
