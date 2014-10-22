@@ -113,6 +113,8 @@ The following method signatures are available for the `pageview()` method of the
 * `Visitor#pageview(path, title, hostname)`
 * `Visitor#pageview(path, title, hostname, callback)`
 
+See also [a acceptable params](AcceptableParams.md).
+
 ## Event tracking
 
 
@@ -182,7 +184,7 @@ The following method signatures are available for #event:
 * `Visitor#event(params)`
 * `Visitor#event(params, callback)`
 
-
+See also [a acceptable params](AcceptableParams.md).
 
 ### Daisy-chaining tracking calls
 
@@ -306,6 +308,7 @@ The following method signatures are available for #item:
 * `Visitor#item(params)`
 * `Visitor#item(params, callback)`
 
+See also [a acceptable params](AcceptableParams.md).
 
 ### Exception tracking
 
@@ -333,7 +336,7 @@ The following method signatures are available for #exception:
 * `Visitor#exception(params)`
 * `Visitor#exception(params, callback)`
 
-
+See also [a acceptable params](AcceptableParams.md).
 
 ### User timing tracking
 
@@ -356,7 +359,7 @@ The following method signatures are available for #timing:
 * `Visitor#timing(params)`
 * `Visitor#timing(params, callback)`
 
-
+See also [a acceptable params](AcceptableParams.md).
 
 ## Session-based identification
 
@@ -378,8 +381,6 @@ Additionally, the module also exposes a `createFromSession` method to create a v
 ```javascript
 var visitor = ua.createFromSession(socket.handshake.session);
 ```
-
-
 
 ## Debug mode
 
