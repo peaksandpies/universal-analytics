@@ -110,8 +110,8 @@ The following method signatures are available for the `pageview()` method of the
 * `Visitor#pageview(params, callback)`
 * `Visitor#pageview(path, hostname)`
 * `Visitor#pageview(path, hostname, callback)`
-* `Visitor#pageview(path, title, hostname)`
-* `Visitor#pageview(path, title, hostname, callback)`
+* `Visitor#pageview(path, hostname, title)`
+* `Visitor#pageview(path, hostname, title, callback)`
 
 See also [a acceptable params](AcceptableParams.md).
 
