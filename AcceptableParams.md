@@ -22,6 +22,11 @@ Pass as: `anonymizeIp` or `aip`
 Optional. When present, the IP address of the sender will be anonymized. For example, the IP will be anonymized if any of the following parameters are present in the payload: &aip=, &aip=0, or &aip=1
 
 
+##Data Source
+Pass as: `dataSource` or `ds`
+
+Optional. Indicates the data source of the hit. Hits sent from analytics.js will have data source set to 'web'; hits sent from one of the mobile SDKs will have data source set to 'app'.
+
 ##Queue Time
 
 Pass as: `queueTime` or `qt`
@@ -70,6 +75,12 @@ Pass as: `userAgentOverride` or `ua`
 
 Optional. The User Agent of the browser. Note that Google has libraries to identify real user agents. Hand crafting your own agent could break at any time.
 
+
+##Geographical Override
+
+Pass as: `geoid` 
+
+Optional. The geographical location of the user. The geographical ID should be a two letter country code or a criteria ID representing a city or region (see http://developers.google.com/analytics/devguides/collection/protocol/v1/geoid). This parameter takes precedent over any location derived from IP address, including the IP Override parameter. An invalid code will result in geographical dimensions to be set to '(not set)'.
 
 ##Document Referrer
 
@@ -462,6 +473,17 @@ Pass as: `serverResponseTime` or `srt`
 
 Optional. Specifies the time it took for the server to respond after the connect time. The value is in milliseconds.
 
+##DOM Interactive Time
+
+Pass as: `domInteractiveTime` or `dit`
+
+Optional. Specifies the time it took for Document.readyState to be 'interactive'. The value is in milliseconds.
+
+##Content Load Time
+
+Pass as: `contentLoadTime` or `clt`
+
+Optional. Specifies the time it took for the DOMContentLoaded Event to fire. The value is in milliseconds.
 
 ##Exception Description
 
@@ -472,7 +494,7 @@ Optional. Specifies the description of an exception.
 
 ##Is Exception Fatal?
 
-Pass as: `isExceptionFatal?` or `exf`
+Pass as: `isExceptionFatal` or `exf`
 
 Optional. Specifies whether the exception was fatal.
 
