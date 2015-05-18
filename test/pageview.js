@@ -235,7 +235,26 @@ describe("ua", function () {
 			_enqueue.args[2][1].dt.should.equal(title2);
 		})
 
-		it("should fail without page path", function () {
+		it("should accept document location instead of page path", function () {
+			var params = {
+				dl: "http://www.google.com/" + Math.random()
+			};
+			var json = JSON.stringify(params)
+			var fn = sinon.spy()
+
+			ua("UA-XXXXX-XX").pageview(params, fn)
+
+			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
+			_enqueue.args[0][0].should.equal("pageview");
+			_enqueue.args[0][1].should.have.keys(["dl"]);
+			_enqueue.args[0][1].dl.should.equal(params.dl);
+
+			fn.calledOnce.should.equal(true, "callback should have been called once");
+
+			JSON.stringify(params).should.equal(json, "params should not have been modified")
+		});
+
+		it("should fail without page path or document location", function () {
 			var fn = sinon.spy()
 			var visitor = ua()
 

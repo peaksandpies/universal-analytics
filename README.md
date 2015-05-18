@@ -92,7 +92,7 @@ visitor.pageview({dp: "/", dt: "Welcome", dh: "http://joergtillmann.com"}).send(
 
 This code has the exact same effect as the one above. `dp`, `dt`, and `dh` (as in 'document path', 'document title' and 'document hostname') are the attribute names used by the Measurement Protocol.
 
-The page path (or `dp`) is  mandatory. Google Analytics can not track a pageview without a path. To avoid such erroneous requests, `universal-analytics` will deny `pageview()` tracking if the path is omitted.
+It's mandatory to specify either the page path (`dp`) or document location (`dl`). Google Analytics can not track a pageview without a path. To avoid such erroneous requests, `universal-analytics` will deny `pageview()` tracking if the required parameters are omitted.
 
 ```javascript
 var pagePath = null;
