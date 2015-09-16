@@ -348,7 +348,7 @@ See also [a acceptable params](AcceptableParams.md).
 Tracking user timings is a way to capture time-based information similar to the page load speed data tracked automatically by Google Analytics. All arguments to this tracking method are optional, but a category, a variable and a time value should be provided. The time value should be provided in milliseconds.
 
 ```javascript
-visitor.timinig("User interaction", "Time to open login overlay", 12547).send()
+visitor.timing("User interaction", "Time to open login overlay", 12547).send()
 ```
 
 The following method signatures are available for #timing:
