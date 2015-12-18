@@ -1,5 +1,10 @@
 # History
 
+## 0.3.10 / 2015-12-18
+
+- Fixed typo in the error handler for events
+- Translate event parameters before validation
+
 ## 0.3.9 / 2015-07-20
 
 - Added possibility of overwrite the hostname of google analytics to HTTPS
