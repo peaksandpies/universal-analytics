@@ -56,7 +56,7 @@ describe("ua", function () {
 					var params = paramSets[i];
 					var args = post.args[i];
 
-					var parsedUrl = url.parse(args[0])
+					var parsedUrl = url.parse(args[0]);
 
 					Math.random(); // I have absolutely no idea why it fails unless there was some processing to be done after url.parse…
 
@@ -64,11 +64,11 @@ describe("ua", function () {
 					args[1].form.should.equal(params);
 				}
 
-				done()
+				done();
 			});
 
 			var visitor = ua();
-			visitor._queue.push.apply(visitor._queue, paramSets)
+			visitor._queue.push.apply(visitor._queue, paramSets);
 			visitor.send(fn);
 		});
 
