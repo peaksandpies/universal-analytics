@@ -1,5 +1,9 @@
 # History
 
+## 0.3.11 / 2016-03-16
+
+- Added requestOptions to allow custom modifications for the request call
+
 ## 0.3.10 / 2015-12-18
 
 - Fixed typo in the error handler for events
