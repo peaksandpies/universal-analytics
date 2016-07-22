@@ -81,6 +81,18 @@ describe("ua", function () {
 			visitor._queue[0].cid.should.equal(cid)
 			visitor._queue[0].foo.should.equal(params.foo);
 		});
+		
+		it("should add userId if present on the Visitor", function() {
+			var tid = "UA-XXXXX-XX";
+			var cid = uuid.v4();
+			var type = "type";
+			var uid = "user1";
+			var params = {}
+
+			var visitor = ua(tid, cid, { uid: uid})._enqueue(type, params);
+			
+			visitor._queue[0].uid.should.equal(uid);
+		});
 
 		it("should accept arguments (type, params, fn)", function () {
 			var tid = "UA-XXXXX-XX";
