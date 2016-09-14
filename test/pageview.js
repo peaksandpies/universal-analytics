@@ -54,7 +54,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp"]);
+			_enqueue.args[0][1].should.have.keys("dp")
 			_enqueue.args[0][1].dp.should.equal(path);
 		});
 
@@ -75,7 +75,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp"]);
+			_enqueue.args[0][1].should.have.keys("dp")
 			_enqueue.args[0][1].dp.should.equal(path);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -99,7 +99,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp"]);
+			_enqueue.args[0][1].should.have.keys("dp")
 			_enqueue.args[0][1].dp.should.equal(params.dp);
 		});
 
@@ -116,7 +116,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp"]);
+			_enqueue.args[0][1].should.have.keys("dp")
 			_enqueue.args[0][1].dp.should.equal(params.dp);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once");
@@ -133,7 +133,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dh"]);
+			_enqueue.args[0][1].should.have.keys("dp", "dh")
 			_enqueue.args[0][1].dp.should.equal(path);
 			_enqueue.args[0][1].dh.should.equal(hostname);
 		});
@@ -148,7 +148,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dh"]);
+			_enqueue.args[0][1].should.have.keys("dp", "dh")
 			_enqueue.args[0][1].dp.should.equal(path);
 			_enqueue.args[0][1].dh.should.equal(hostname);
 
@@ -165,7 +165,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dh", "dt"]);
+			_enqueue.args[0][1].should.have.keys("dp", "dh", "dt")
 			_enqueue.args[0][1].dp.should.equal(path);
 			_enqueue.args[0][1].dh.should.equal(hostname);
 			_enqueue.args[0][1].dt.should.equal(title);
@@ -182,7 +182,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dp", "dh", "dt"]);
+			_enqueue.args[0][1].should.have.keys("dp", "dh", "dt")
 			_enqueue.args[0][1].dp.should.equal(path);
 			_enqueue.args[0][1].dh.should.equal(hostname);
 			_enqueue.args[0][1].dt.should.equal(title);
@@ -221,16 +221,16 @@ describe("ua", function () {
 
 			_enqueue.calledThrice.should.equal(true, "#_enqueue should have been called three times, once for each pageview");
 
-			_enqueue.args[0][1].should.have.keys(["dp", "dt"]);
+			_enqueue.args[0][1].should.have.keys("dp", "dt")
 			_enqueue.args[0][1].dp.should.equal(path);
 			_enqueue.args[0][1].dt.should.equal(title);
 
-			_enqueue.args[1][1].should.have.keys(["dp", "dt", "foo"]);
+			_enqueue.args[1][1].should.have.keys("dp", "dt", "foo")
 			_enqueue.args[1][1].dp.should.equal(path2);
 			_enqueue.args[1][1].dt.should.equal(title2);
 			_enqueue.args[1][1].foo.should.equal(foo);
 
-			_enqueue.args[2][1].should.have.keys(["dp", "dt"]);
+			_enqueue.args[2][1].should.have.keys("dp", "dt")
 			_enqueue.args[2][1].dp.should.equal(path);
 			_enqueue.args[2][1].dt.should.equal(title2);
 		})
@@ -246,7 +246,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("pageview");
-			_enqueue.args[0][1].should.have.keys(["dl"]);
+			_enqueue.args[0][1].should.have.keys("dl")
 			_enqueue.args[0][1].dl.should.equal(params.dl);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once");

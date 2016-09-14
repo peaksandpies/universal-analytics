@@ -54,7 +54,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 		});
@@ -68,7 +68,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 
@@ -84,7 +84,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 			_enqueue.args[0][1].el.should.equal(label);
@@ -100,7 +100,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 			_enqueue.args[0][1].el.should.equal(label);
@@ -118,7 +118,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el", "ev"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el", "ev")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 			_enqueue.args[0][1].el.should.equal(label);
@@ -136,7 +136,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el", "ev"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el", "ev")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 			_enqueue.args[0][1].el.should.equal(label);
@@ -157,7 +157,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el", "ev", "p"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el", "ev", "p")
 			_enqueue.args[0][1].ec.should.equal(category);
 			_enqueue.args[0][1].ea.should.equal(action);
 			_enqueue.args[0][1].el.should.equal(label);
@@ -182,7 +182,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el", "ev", "p"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el", "ev", "p")
 			_enqueue.args[0][1].ec.should.equal(params.ec);
 			_enqueue.args[0][1].ea.should.equal(params.ea);
 			_enqueue.args[0][1].el.should.equal(params.el);
@@ -206,7 +206,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "el", "ev", "p"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "el", "ev", "p")
 			_enqueue.args[0][1].ec.should.equal(params.ec);
 			_enqueue.args[0][1].ea.should.equal(params.ea);
 			_enqueue.args[0][1].el.should.equal(params.el);
@@ -228,7 +228,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys(["ec", "ea", "p"]);
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "p")
 			_enqueue.args[0][1].ec.should.equal(params.ec);
 			_enqueue.args[0][1].ea.should.equal(params.ea);
 			_enqueue.args[0][1].p.should.equal(params.dp);

@@ -38,7 +38,7 @@ describe("ua", function () {
 
 			visitor._queue.length.should.equal(1, "1 tracking call should have been enqueued");
 
-			visitor._queue[0].should.have.keys(["v", "tid", "cid", "t"]);
+			visitor._queue[0].should.have.keys("v", "tid", "cid", "t")
 			visitor._queue[0].tid.should.equal(tid)
 			visitor._queue[0].cid.should.equal(cid)
 			visitor._queue[0].t.should.equal(type)
@@ -56,7 +56,7 @@ describe("ua", function () {
 
 			visitor._queue.length.should.equal(1, "1 tracking call should have been enqueued");
 
-			visitor._queue[0].should.have.keys(["v", "tid", "cid", "t"]);
+			visitor._queue[0].should.have.keys("v", "tid", "cid", "t")
 			visitor._queue[0].tid.should.equal(tid)
 			visitor._queue[0].cid.should.equal(cid)
 			visitor._queue[0].t.should.equal(type)
@@ -76,12 +76,12 @@ describe("ua", function () {
 
 			visitor._queue.length.should.equal(1, "1 tracking call should have been enqueued");
 
-			visitor._queue[0].should.have.keys(["v", "tid", "cid", "t", "foo"]);
+			visitor._queue[0].should.have.keys("v", "tid", "cid", "t", "foo")
 			visitor._queue[0].tid.should.equal(tid)
 			visitor._queue[0].cid.should.equal(cid)
 			visitor._queue[0].foo.should.equal(params.foo);
 		});
-		
+
 		it("should add userId if present on the Visitor", function() {
 			var tid = "UA-XXXXX-XX";
 			var cid = uuid.v4();
@@ -90,7 +90,7 @@ describe("ua", function () {
 			var params = {}
 
 			var visitor = ua(tid, cid, { uid: uid})._enqueue(type, params);
-			
+
 			visitor._queue[0].uid.should.equal(uid);
 		});
 
@@ -107,7 +107,7 @@ describe("ua", function () {
 
 			visitor._queue.length.should.equal(1, "1 tracking call should have been enqueued");
 
-			visitor._queue[0].should.have.keys(["v", "tid", "cid", "t", "foo"]);
+			visitor._queue[0].should.have.keys("v", "tid", "cid", "t", "foo")
 			visitor._queue[0].tid.should.equal(tid)
 			visitor._queue[0].cid.should.equal(cid)
 			visitor._queue[0].foo.should.equal(params.foo);

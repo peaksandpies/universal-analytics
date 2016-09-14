@@ -47,7 +47,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc"]);
+			_enqueue.args[0][1].should.have.keys("utc")
 			_enqueue.args[0][1].utc.should.equal(category);
 		});
 
@@ -68,7 +68,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc"]);
+			_enqueue.args[0][1].should.have.keys("utc")
 			_enqueue.args[0][1].utc.should.equal(category);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once")
@@ -91,7 +91,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 		});
@@ -114,7 +114,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 
@@ -139,7 +139,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -164,7 +164,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -191,7 +191,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -218,7 +218,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -247,7 +247,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl", "p"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl", "p")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -276,7 +276,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl", "p"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl", "p")
 			_enqueue.args[0][1].utc.should.equal(category);
 			_enqueue.args[0][1].utv.should.equal(variable);
 			_enqueue.args[0][1].utt.should.equal(time);
@@ -308,7 +308,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl", "p"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl", "p")
 			_enqueue.args[0][1].utc.should.equal(params.utc);
 			_enqueue.args[0][1].utv.should.equal(params.utv);
 			_enqueue.args[0][1].utt.should.equal(params.utt);
@@ -339,7 +339,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("timing");
-			_enqueue.args[0][1].should.have.keys(["utc", "utv", "utt", "utl", "p"]);
+			_enqueue.args[0][1].should.have.keys("utc", "utv", "utt", "utl", "p")
 			_enqueue.args[0][1].utc.should.equal(params.utc);
 			_enqueue.args[0][1].utv.should.equal(params.utv);
 			_enqueue.args[0][1].utt.should.equal(params.utt);

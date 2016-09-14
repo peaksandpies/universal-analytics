@@ -54,7 +54,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti"]);
+			_enqueue.args[0][1].should.have.keys("ti")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 		});
 
@@ -67,7 +67,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti"]);
+			_enqueue.args[0][1].should.have.keys("ti")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once")
@@ -82,7 +82,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 		});
@@ -97,7 +97,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 
@@ -114,7 +114,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -131,7 +131,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -150,7 +150,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -169,7 +169,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -190,7 +190,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -211,7 +211,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -234,7 +234,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta", "p"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta", "p")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -257,7 +257,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta", "p"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta", "p")
 			_enqueue.args[0][1].ti.should.equal(transaction);
 			_enqueue.args[0][1].tr.should.equal(revenue);
 			_enqueue.args[0][1].ts.should.equal(shipping);
@@ -293,7 +293,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta", "p"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta", "p")
 			_enqueue.args[0][1].ti.should.equal(params.ti);
 			_enqueue.args[0][1].tr.should.equal(params.tr);
 			_enqueue.args[0][1].ts.should.equal(params.ts);
@@ -328,7 +328,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("transaction");
-			_enqueue.args[0][1].should.have.keys(["ti", "tr", "ts", "tt", "ta", "p"]);
+			_enqueue.args[0][1].should.have.keys("ti", "tr", "ts", "tt", "ta", "p")
 			_enqueue.args[0][1].ti.should.equal(params.ti);
 			_enqueue.args[0][1].tr.should.equal(params.tr);
 			_enqueue.args[0][1].ts.should.equal(params.ts);

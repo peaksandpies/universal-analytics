@@ -47,7 +47,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd"]);
+			_enqueue.args[0][1].should.have.keys("exd")
 			_enqueue.args[0][1].exd.should.equal(description);
 		});
 
@@ -60,7 +60,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd"]);
+			_enqueue.args[0][1].should.have.keys("exd")
 			_enqueue.args[0][1].exd.should.equal(description);
 
 			fn.calledOnce.should.equal(true, "callback should have been called once")
@@ -83,7 +83,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf")
 			_enqueue.args[0][1].exd.should.equal(description);
 			_enqueue.args[0][1].exf.should.equal(fatal);
 		});
@@ -106,7 +106,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf")
 			_enqueue.args[0][1].exd.should.equal(description);
 			_enqueue.args[0][1].exf.should.equal(fatal);
 
@@ -131,7 +131,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf", "p"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf", "p")
 			_enqueue.args[0][1].exd.should.equal(description);
 			_enqueue.args[0][1].exf.should.equal(fatal);
 			_enqueue.args[0][1].p.should.equal(params.p);
@@ -156,7 +156,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf", "p"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf", "p")
 			_enqueue.args[0][1].exd.should.equal(description);
 			_enqueue.args[0][1].exf.should.equal(fatal);
 			_enqueue.args[0][1].p.should.equal(params.p);
@@ -184,7 +184,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf", "p"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf", "p")
 			_enqueue.args[0][1].exd.should.equal(params.exd);
 			_enqueue.args[0][1].exf.should.equal(params.exf);
 			_enqueue.args[0][1].p.should.equal(params.p);
@@ -211,7 +211,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("exception");
-			_enqueue.args[0][1].should.have.keys(["exd", "exf", "p"]);
+			_enqueue.args[0][1].should.have.keys("exd", "exf", "p")
 			_enqueue.args[0][1].exd.should.equal(params.exd);
 			_enqueue.args[0][1].exf.should.equal(params.exf);
 			_enqueue.args[0][1].p.should.equal(params.p);

@@ -55,7 +55,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 		});
@@ -78,7 +78,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 
@@ -103,7 +103,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -128,7 +128,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -155,7 +155,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -182,7 +182,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -211,7 +211,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -240,7 +240,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -271,7 +271,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -302,7 +302,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -335,7 +335,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv", "foo"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv", "foo")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -368,7 +368,7 @@ describe("ua", function () {
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction before");
 			_enqueue.args[0][0].should.equal("transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv", "foo"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv", "foo")
 			_enqueue.args[1][1].ti.should.equal(transaction);
 			_enqueue.args[1][1].ip.should.equal(price);
 			_enqueue.args[1][1].iq.should.equal(quantity);
@@ -401,7 +401,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("item");
-			_enqueue.args[0][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv"]);
+			_enqueue.args[0][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv")
 			_enqueue.args[0][1].ip.should.equal(price);
 			_enqueue.args[0][1].iq.should.equal(quantity);
 			_enqueue.args[0][1].ic.should.equal(sku);
@@ -435,7 +435,7 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("item");
-			_enqueue.args[0][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv"]);
+			_enqueue.args[0][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv")
 			_enqueue.args[0][1].ip.should.equal(params.ip);
 			_enqueue.args[0][1].iq.should.equal(params.iq);
 			_enqueue.args[0][1].ic.should.equal(params.ic);
@@ -469,7 +469,7 @@ describe("ua", function () {
 
 			_enqueue.calledTwice.should.equal(true, "#_enqueue should have been called twice, once for the transaction");
 			_enqueue.args[1][0].should.equal("item");
-			_enqueue.args[1][1].should.have.keys(["ti", "ip", "iq", "ic", "in", "iv"]);
+			_enqueue.args[1][1].should.have.keys("ti", "ip", "iq", "ic", "in", "iv")
 			_enqueue.args[1][1].ip.should.equal(params.ip);
 			_enqueue.args[1][1].iq.should.equal(params.iq);
 			_enqueue.args[1][1].ic.should.equal(params.ic);
