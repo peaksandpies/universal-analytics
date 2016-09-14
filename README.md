@@ -243,6 +243,15 @@ visitor
 In this example the event category ("Mail Server") is not repeated in the second tracking call.
 
 
+### Setting persistent parameters
+
+Some parameters should be in every tracking call, such as a user ID or custom dimensions that never or hardly change. For such situations a `#set(key, value)` method is available
+
+visitor.set("uid", "123456789")
+
+The uid parameter will be part of every tracking request of that visitor from now on.
+
+
 ### E-commerce tracking
 
 E-commerce tracking in general is a bit more complex. It requires a combination of one call to the `transaction()` method and one or more calls to the `item()` method.
