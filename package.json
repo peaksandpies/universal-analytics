@@ -20,7 +20,7 @@
     "request": "2.x",
     "underscore": "1.x",
     "node-uuid": "1.x",
-    "async": "0.2.x"
+    "async": "1.2.x"
   },
   "devDependencies": {
     "should": "*",
