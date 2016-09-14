@@ -1,5 +1,9 @@
 # History
 
+## 0.4.4 / 2016-09-14
+
+- Fixed bug in #set() method
+
 ## 0.4.3 / 2016-09-14
 
 - Added #set() method for persistent parameters
