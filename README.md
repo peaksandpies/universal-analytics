@@ -78,13 +78,13 @@ visitor.pageview("/", function (err) {
 The first argument for the pageview tracking call is the page path. Furthermore, pageview tracking can be improved with the additional parameters to provide the page's hostname and title to Google Analytics. The parameters are provided as arguments after the page path.
 
 ```javascript
-visitor.pageview("/", "Welcome", "http://joergtillmann.com").send();
+visitor.pageview("/", "http://joergtillmann.com", "Welcome").send();
 ```
 
 The following snippet is the exact same tracking using a callback. It is always the last argument.
 
 ```javascript
-visitor.pageview("/", "Welcome", "http://joergtillmann.com", function (err) {
+visitor.pageview("/", "http://joergtillmann.com", "Welcome", function (err) {
   // …
 });
 ```
