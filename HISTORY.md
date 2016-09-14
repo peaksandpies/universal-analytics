@@ -1,5 +1,13 @@
 # History
 
+## 0.4.3 / 2016-09-14
+
+- Added #set() method for persistent parameters
+
+## 0.4.2 / 2016-07-22
+
+- Added batch requests
+
 ## 0.3.11 / 2016-03-16
 
 - Added requestOptions to allow custom modifications for the request call
