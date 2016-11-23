@@ -1,5 +1,9 @@
 # History
 
+## 0.4.8 / 2016-11-23
+
+- Added support for providing request options
+
 ## 0.4.7 / 2016-11-23
 
 - Updated uuid module to 3.0.0
