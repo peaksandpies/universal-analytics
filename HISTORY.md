@@ -1,5 +1,13 @@
 # History
 
+## 0.4.7 / 2016-11-23
+
+- Updated uuid module to 3.0.0
+
+## 0.4.5 / 2016-09-14
+
+- Fixed bug caused by different should.js version
+
 ## 0.4.4 / 2016-09-14
 
 - Fixed bug in #set() method
