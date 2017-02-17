@@ -78,13 +78,13 @@ visitor.pageview("/", function (err) {
 The first argument for the pageview tracking call is the page path. Furthermore, pageview tracking can be improved with the additional parameters to provide the page's hostname and title to Google Analytics. The parameters are provided as arguments after the page path.
 
 ```javascript
-visitor.pageview("/", "http://joergtillmann.com", "Welcome").send();
+visitor.pageview("/", "http://peaksandpies.com", "Welcome").send();
 ```
 
 The following snippet is the exact same tracking using a callback. It is always the last argument.
 
 ```javascript
-visitor.pageview("/", "http://joergtillmann.com", "Welcome", function (err) {
+visitor.pageview("/", "http://peaksandpies.com", "Welcome", function (err) {
   // …
 });
 ```
@@ -92,7 +92,7 @@ visitor.pageview("/", "http://joergtillmann.com", "Welcome", function (err) {
 Depending on how you integrate tracking into your app, you might be more comfortable with providing all the tracking data via a params object to the `pageview()` method:
 
 ```javascript
-visitor.pageview({dp: "/", dt: "Welcome", dh: "http://joergtillmann.com"}).send();
+visitor.pageview({dp: "/", dt: "Welcome", dh: "http://peaksandpies.com"}).send();
 ```
 
 This code has the exact same effect as the one above. `dp`, `dt`, and `dh` (as in 'document path', 'document title' and 'document hostname') are the attribute names used by the Measurement Protocol.

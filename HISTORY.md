@@ -1,5 +1,9 @@
 # History
 
+## 0.4.9 / 2017-02-17
+
+- Readme update
+
 ## 0.4.8 / 2016-11-23
 
 - Added support for providing request options
