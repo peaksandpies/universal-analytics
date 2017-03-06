@@ -1,5 +1,9 @@
 # History
 
+## 0.4.10 / 2017-03-06
+
+- Added content groups as acceptable params
+
 ## 0.4.9 / 2017-02-17
 
 - Readme update

@@ -78,7 +78,7 @@ Optional. The User Agent of the browser. Note that Google has libraries to ident
 
 ##Geographical Override
 
-Pass as: `geoid` 
+Pass as: `geoid`
 
 Optional. The geographical location of the user. The geographical ID should be a two letter country code or a criteria ID representing a city or region (see http://developers.google.com/analytics/devguides/collection/protocol/v1/geoid). This parameter takes precedent over any location derived from IP address, including the IP Override parameter. An invalid code will result in geographical dimensions to be set to '(not set)'.
 
@@ -513,6 +513,13 @@ Pass as: `cm[1-9][0-9]*`
 Optional. Each custom metric has an associated index. There is a maximum of 20 custom metrics (200 for Premium accounts). The name suffix must be a positive integer between 1 and 200, inclusive.
 
 
+##Content Group
+
+Pass as: `cg(10|[0-9])`
+
+Optional. Up to 10 content groups are possible.
+
+
 ##Experiment ID
 
 Pass as: `experimentId` or `xid`
@@ -528,7 +535,7 @@ Optional. This parameter specifies that this user has been exposed to a particul
 
 ##Enhanced e-commerce
 
-To use enhanced e-commerce you must explicitly enable it in Google Analytics admin. Some parameters overlap with regular e-commerce tracking (`ti`, `ta`, `tr`, `tt`, `ts`), 
+To use enhanced e-commerce you must explicitly enable it in Google Analytics admin. Some parameters overlap with regular e-commerce tracking (`ti`, `ta`, `tr`, `tt`, `ts`),
 however item tracking is different.
 
 You may generate enhanced e-commerce using the [`gampee`](https://www.npmjs.com/package/gampee) module.
