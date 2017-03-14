@@ -1,5 +1,10 @@
 # History
 
+## 0.4.11 / 2017-03-14
+
+- Updated UA#event to translate parameters before merging with persisted params
+- Added parameter translation to all other tracking calls
+
 ## 0.4.10 / 2017-03-06
 
 - Added content groups as acceptable params
