@@ -1,5 +1,9 @@
 # History
 
+## 0.4.12 / 2017-03-16
+
+- Fix `pageview` key mappings
+
 ## 0.4.11 / 2017-03-14
 
 - Updated UA#event to translate parameters before merging with persisted params
