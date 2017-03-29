@@ -422,22 +422,22 @@ Transaction consist of one or more items.
 visitor.item(449.99, 1, "ID54321", "T-Shirt", {ti: "123456"}).send()
 ```
 
-The following method signatures are available for #transaction:
+The following method signatures are available for #item:
 
-* `Visitor#transaction(price)`
-* `Visitor#transaction(price, callback)`
-* `Visitor#transaction(price, quantity)`
-* `Visitor#transaction(price, quantity, callback)`
-* `Visitor#transaction(price, quantity, sku)`
-* `Visitor#transaction(price, quantity, sku, callback)`
-* `Visitor#transaction(price, quantity, sku, name)`
-* `Visitor#transaction(price, quantity, sku, name, callback)`
-* `Visitor#transaction(price, quantity, sku, name, variation)`
-* `Visitor#transaction(price, quantity, sku, name, variation, callback)`
-* `Visitor#transaction(price, quantity, sku, name, variation, params)`
-* `Visitor#transaction(price, quantity, sku, name, variation, params, callback)`
-* `Visitor#transaction(params)`
-* `Visitor#transaction(params, callback)`
+* `Visitor#item(price)`
+* `Visitor#item(price, callback)`
+* `Visitor#item(price, quantity)`
+* `Visitor#item(price, quantity, callback)`
+* `Visitor#item(price, quantity, sku)`
+* `Visitor#item(price, quantity, sku, callback)`
+* `Visitor#item(price, quantity, sku, name)`
+* `Visitor#item(price, quantity, sku, name, callback)`
+* `Visitor#item(price, quantity, sku, name, variation)`
+* `Visitor#item(price, quantity, sku, name, variation, callback)`
+* `Visitor#item(price, quantity, sku, name, variation, params)`
+* `Visitor#item(price, quantity, sku, name, variation, params, callback)`
+* `Visitor#item(params)`
+* `Visitor#item(params, callback)`
 
 See also: [List of acceptable params](AcceptableParams.md).
 
