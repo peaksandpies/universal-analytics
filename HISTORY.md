@@ -1,5 +1,10 @@
 # History
 
+## 0.4.13 / 2017-03-29
+
+- Added `screenview` method
+- Updated Readme
+
 ## 0.4.12 / 2017-03-16
 
 - Fix `pageview` key mappings
