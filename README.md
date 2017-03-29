@@ -5,17 +5,30 @@ A node module for Google's [Universal Analytics](http://support.google.com/analy
 
 This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
 
-`universal-analytics` currently supports the following tracking features:
-
-* Pageviews
-* Events
-* E-Commerce with transactions and items
-* Exceptions
-* User timings
-
 [![Build Status](https://travis-ci.org/peaksandpies/universal-analytics.png?branch=master)](https://travis-ci.org/peaksandpies/universal-analytics)
 
-## Getting started
+
+# Table of Contents
+
+- [Getting started](#getting-started)
+- [Tracking](#tracking)
+  - [Pageviews](#pageview-tracking)
+  - [Screenviews](#screenview-tracking)
+  - [Events](#event-tracking)
+  - [Exceptions](#exception-tracking)
+  - [User timings](#user-timing-tracking)
+  - [Transactions](#transaction-tracking)
+    - [Transaction items](#transaction-item-tracking)
+- [Daisy-chaining tracking calls](#daisy-chaining-tracking-calls)
+- [Setting persistent parameters](#setting-persistent-parameters)
+- [Session-based identification](#session-based-identification)
+- [Debug mode](#debug-mode)
+- [Request Options](#request-options)
+- [Shortcuts](#shortcuts)
+- [Tests](#tests)
+
+
+# Getting started
 
 `universal-analytics` is installed and included like any other node module:
 
@@ -73,6 +86,10 @@ visitor.pageview("/", function (err) {
 ```
 
 
+
+# Tracking
+
+
 ## Pageview tracking
 
 The first argument for the pageview tracking call is the page path. Furthermore, pageview tracking can be improved with the additional parameters to provide the page's hostname and title to Google Analytics. The parameters are provided as arguments after the page path.
@@ -118,7 +135,41 @@ The following method signatures are available for the `pageview()` method of the
 * `Visitor#pageview(path, hostname, title)`
 * `Visitor#pageview(path, hostname, title, callback)`
 
-See also [a acceptable params](AcceptableParams.md).
+See also: [List of acceptable params](AcceptableParams.md).
+
+
+
+
+
+## Screenview tracking
+
+Instead of pageviews app will want to track screenviews.
+
+```javascript
+visitor.screenview("Home Screen", "App Name").send()
+```
+
+The following method signatures are available for #screenview:
+
+* `Visitor#screenview(screenName, appName)`
+* `Visitor#screenview(screenName, appName, callback)`
+* `Visitor#screenview(screenName, appName, appVersion)`
+* `Visitor#screenview(screenName, appName, appVersion, callback)`
+* `Visitor#screenview(screenName, appName, appVersion, appId)`
+* `Visitor#screenview(screenName, appName, appVersion, appId, callback)`
+* `Visitor#screenview(screenName, appName, appVersion, appId, appInstallerId)`
+* `Visitor#screenview(screenName, appName, appVersion, appId, appInstallerId, callback)`
+* `Visitor#screenview(screenName, appName, appVersion, appId, appInstallerId, params)`
+* `Visitor#screenview(screenName, appName, appVersion, appId, appInstallerId, params, callback)`
+* `Visitor#screenview(params)`
+* `Visitor#screenview(params, callback)`
+
+See also: [List of acceptable params](AcceptableParams.md).
+
+
+
+
+
 
 ## Event tracking
 
@@ -189,70 +240,13 @@ The following method signatures are available for #event:
 * `Visitor#event(params)`
 * `Visitor#event(params, callback)`
 
-See also [a acceptable params](AcceptableParams.md).
-
-### Daisy-chaining tracking calls
-
-We have seen basic daisy-chaining above when calling `send()` right after `pageview()` and `event()`:
-
-```javascript
-visitor.pageview("/").send()
-```
-
-Every call of a tracking method returns a visitor instance you can re-use:
-
-```javascript
-visitor.pageview("/").pageview("/contact").send()
-```
-
-Granted, the chance of this example actually happening in practice might be rather low.
-
-However, `universal-analytics` is smart when it comes to daisy-chaining certain calls. In many cases, a `pageview()` call is instantly followed by an `event()` call to track some additional information about the current page. `universal-analytics` makes creating the connection between the two easy:
-
-```javascript
-visitor.pageview("/landing-page-1").event("Testing", "Button color", "Blue").send()
-```
-This is the same as two distinct tracking calls.
-
-```javascript
-visitor.pageview("/landing-page-1").send()
-visitor.event("Testing", "Button color", "Blue", {p: "/landing-page-1"}).send()
-```
-
-Daisy-chaining is context-aware and in this case placing the `event()` call right after the `pageview()` call results in the event being associated with the page path tracking in the `pageview()` call. Even though the attributes (`dp` and `p`)  are different internally.
-
-It also works when using a callback since the `this` inside the callback will be the `universal-analytics` Visitor instance:
-
-```javascript
-visitor.pageview("/landing-page-1", function (err) {
-  if (!err) {
-    this.event("Testing", "Button color", "Blue").send()
-  }
-});
-```
-
-More generally, the daisy-chaining context keeps all parameters from the previous call around. This means in a situation where similar tracking calls are necessary tracking is simplified:
-
-```javascript
-visitor
-  .event({ec: "Mail Server", ea: "New Team Member Notification sent"})
-  .event({ea: "Invitation sent"})
-  .send();
-```
-
-In this example the event category ("Mail Server") is not repeated in the second tracking call.
+See also: [List of acceptable params](AcceptableParams.md).
 
 
-### Setting persistent parameters
-
-Some parameters should be in every tracking call, such as a user ID or custom dimensions that never or hardly change. For such situations a `#set(key, value)` method is available
-
-visitor.set("uid", "123456789")
-
-The uid parameter will be part of every tracking request of that visitor from now on.
 
 
-### E-commerce tracking
+
+## E-commerce tracking
 
 E-commerce tracking in general is a bit more complex. It requires a combination of one call to the `transaction()` method and one or more calls to the `item()` method.
 
@@ -322,9 +316,14 @@ The following method signatures are available for #item:
 * `Visitor#item(params)`
 * `Visitor#item(params, callback)`
 
-See also [a acceptable params](AcceptableParams.md).
+See also: [List of acceptable params](AcceptableParams.md).
 
-### Exception tracking
+
+
+
+
+
+## Exception tracking
 
 Exception tracking is a way to keep track of any sort of application errors and bugs with Google Analytics. Using it with this module is a way to capture server-side problems.
 
@@ -350,9 +349,14 @@ The following method signatures are available for #exception:
 * `Visitor#exception(params)`
 * `Visitor#exception(params, callback)`
 
-See also [a acceptable params](AcceptableParams.md).
+See also: [List of acceptable params](AcceptableParams.md).
 
-### User timing tracking
+
+
+
+
+
+## User timing tracking
 
 Tracking user timings is a way to capture time-based information similar to the page load speed data tracked automatically by Google Analytics. All arguments to this tracking method are optional, but a category, a variable and a time value should be provided. The time value should be provided in milliseconds.
 
@@ -373,9 +377,147 @@ The following method signatures are available for #timing:
 * `Visitor#timing(params)`
 * `Visitor#timing(params, callback)`
 
-See also [a acceptable params](AcceptableParams.md).
+See also: [List of acceptable params](AcceptableParams.md).
 
-## Session-based identification
+
+
+
+
+## Transaction tracking
+
+Transactions are the main tracking calls for ecommerce tracking
+
+```javascript
+visitor.transaction("123456", "449.99").send()
+```
+
+The following method signatures are available for #transaction:
+
+* `Visitor#transaction(transactionId)`
+* `Visitor#transaction(transactionId, callback)`
+* `Visitor#transaction(transactionId, revenue)`
+* `Visitor#transaction(transactionId, revenue, callback)`
+* `Visitor#transaction(transactionId, revenue, shippingCost)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, callback)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax, callback)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax, affiliation)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax, affiliation, callback)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax, affiliation, params)`
+* `Visitor#transaction(transactionId, revenue, shippingCost, tax, affiliation, params, callback)`
+* `Visitor#transaction(params)`
+* `Visitor#transaction(params, callback)`
+
+See also: [List of acceptable params](AcceptableParams.md).
+
+
+
+
+
+### Transaction item tracking
+
+Transaction consist of one or more items.
+
+```javascript
+visitor.item(449.99, 1, "ID54321", "T-Shirt", {ti: "123456"}).send()
+```
+
+The following method signatures are available for #transaction:
+
+* `Visitor#transaction(price)`
+* `Visitor#transaction(price, callback)`
+* `Visitor#transaction(price, quantity)`
+* `Visitor#transaction(price, quantity, callback)`
+* `Visitor#transaction(price, quantity, sku)`
+* `Visitor#transaction(price, quantity, sku, callback)`
+* `Visitor#transaction(price, quantity, sku, name)`
+* `Visitor#transaction(price, quantity, sku, name, callback)`
+* `Visitor#transaction(price, quantity, sku, name, variation)`
+* `Visitor#transaction(price, quantity, sku, name, variation, callback)`
+* `Visitor#transaction(price, quantity, sku, name, variation, params)`
+* `Visitor#transaction(price, quantity, sku, name, variation, params, callback)`
+* `Visitor#transaction(params)`
+* `Visitor#transaction(params, callback)`
+
+See also: [List of acceptable params](AcceptableParams.md).
+
+
+
+
+
+
+# Daisy-chaining tracking calls
+
+We have seen basic daisy-chaining above when calling `send()` right after `pageview()` and `event()`:
+
+```javascript
+visitor.pageview("/").send()
+```
+
+Every call of a tracking method returns a visitor instance you can re-use:
+
+```javascript
+visitor.pageview("/").pageview("/contact").send()
+```
+
+Granted, the chance of this example actually happening in practice might be rather low.
+
+However, `universal-analytics` is smart when it comes to daisy-chaining certain calls. In many cases, a `pageview()` call is instantly followed by an `event()` call to track some additional information about the current page. `universal-analytics` makes creating the connection between the two easy:
+
+```javascript
+visitor.pageview("/landing-page-1").event("Testing", "Button color", "Blue").send()
+```
+This is the same as two distinct tracking calls.
+
+```javascript
+visitor.pageview("/landing-page-1").send()
+visitor.event("Testing", "Button color", "Blue", {p: "/landing-page-1"}).send()
+```
+
+Daisy-chaining is context-aware and in this case placing the `event()` call right after the `pageview()` call results in the event being associated with the page path tracking in the `pageview()` call. Even though the attributes (`dp` and `p`)  are different internally.
+
+It also works when using a callback since the `this` inside the callback will be the `universal-analytics` Visitor instance:
+
+```javascript
+visitor.pageview("/landing-page-1", function (err) {
+  if (!err) {
+    this.event("Testing", "Button color", "Blue").send()
+  }
+});
+```
+
+More generally, the daisy-chaining context keeps all parameters from the previous call around. This means in a situation where similar tracking calls are necessary tracking is simplified:
+
+```javascript
+visitor
+  .event({ec: "Mail Server", ea: "New Team Member Notification sent"})
+  .event({ea: "Invitation sent"})
+  .send();
+```
+
+In this example the event category ("Mail Server") is not repeated in the second tracking call.
+
+
+
+
+# Setting persistent parameters
+
+Some parameters should be in every tracking call, such as a user ID or custom dimensions that never or hardly change. For such situations a `#set(key, value)` method is available
+
+```javascript
+  visitor.set("uid", "123456789")
+```
+
+The uid parameter will be part of every tracking request of that visitor from now on.
+
+
+
+
+
+
+
+
+# Session-based identification
 
 In order to make session-based apps easier to work with, `universal-analytics` also provides a middleware that works in an Expressjs-style fashion. It will try to detect a client ID based on the `_ga` cookie used by the analytics.js client-side tracking. Additionally it will store the detected client ID in the current session to recognize the visitor later.
 
@@ -396,7 +538,7 @@ Additionally, the module also exposes a `createFromSession` method to create a v
 var visitor = ua.createFromSession(socket.handshake.session);
 ```
 
-## Debug mode
+# Debug mode
 
 `universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
 
@@ -406,7 +548,7 @@ var visitor = ua("UA-XXXX-XX").debug()
 ```
 
 
-## Request Options
+# Request Options
 
 In order to add additional options to the request a `requestOptions` hash can be provided as part of the constructor options. `unviversal-analytics` uses the [`request`](https://www.npmjs.com/package/request) library. Therefor [any option available for that library](https://www.npmjs.com/package/request#requestoptions-callback) can be provided via the `requestOptions`.
 
@@ -419,7 +561,7 @@ var visitor = ua('UA-XXXX-XX', {
 ```
 
 
-## Shortcuts
+# Shortcuts
 
 The tracking methods have shortcuts:
 
@@ -440,11 +582,11 @@ $ npm install
 $ make test
 ```
 
-## License
+# License
 
 (The MIT License)
 
-Copyright (c) 2016 Peaks & Pies GmbH &lt;hello@peaksandpies.com&gt;
+Copyright (c) 2017 Peaks & Pies GmbH &lt;hello@peaksandpies.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
