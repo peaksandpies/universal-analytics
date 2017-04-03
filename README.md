@@ -530,6 +530,17 @@ var app = express()
 express.use(ua.middleware("UA-XXXX-Y", {cookieName: '_ga'}));
 ```
 
+Or, if you're using the koa framework
+
+```javascript
+var ua  = require("universal-analytics");
+var koa = require("koa");
+
+var app = koa()
+
+app.use(ua.koa("UA-XXXX-Y"));
+```
+
 The middleware will attach the `universal analytics` visitor instance to every request (`req.visitor`).
 
 Additionally, the module also exposes a `createFromSession` method to create a visitor instance simply based on a session, which is helpful when working with Socket.io, etc. where the middleware is not used.
