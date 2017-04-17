@@ -1,7 +1,5 @@
 # Acceptable parameters
 
-------
-
 ## Protocol Version
 
 Pass as: `protocolVersion` or `v`
