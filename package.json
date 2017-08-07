@@ -19,12 +19,13 @@
   "dependencies": {
     "async": "1.2.x",
     "request": "2.x",
+    "sinon": "^1.17.7",
     "underscore": "1.x",
     "uuid": "^3.0.0"
   },
   "devDependencies": {
     "should": "*",
-    "sinon": "*",
+    "sinon": "^2",
     "mocha": "*"
   },
   "author": "Jörg Tillmann <joerg@peaksandpies.com>",
