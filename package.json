@@ -1,6 +1,6 @@
 {
   "name": "universal-analytics",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "description": "A node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "should": "*",
-    "sinon": "^2",
+    "sinon": "^1.17.7",
     "mocha": "*"
   },
   "author": "Jörg Tillmann <joerg@peaksandpies.com>",

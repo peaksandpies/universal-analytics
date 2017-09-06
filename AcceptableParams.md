@@ -285,11 +285,11 @@ Pass as: `eventCategory` or `ec`
 Optional. Specifies the event category. Must not be empty.
 
 
-##E vent Action
+## Event Action
 
 Pass as: `eventAction` or `ea`
 
-Optional.Specifies the event action. Must not be empty.
+Optional. Specifies the event action. Must not be empty.
 
 
 ## Event Label
