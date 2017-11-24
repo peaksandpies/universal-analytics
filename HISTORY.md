@@ -1,5 +1,9 @@
 # History
 
+## 0.4.16
+
+- Removed async, underscore dependencies
+
 ## 0.4.15 / 2017-08-10
 
 - Fixed dependencies
