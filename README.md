@@ -528,7 +528,7 @@ Set a persistent parameter for [`Data Source`](https://developers.google.com/ana
  visitor.set("ds", "app"); // Allows filtering by the 'Application?' field in GA
 ```
 
-Then create a new view in Google Analytics of type 'Application'. You will then need to filter the data for that view by creating a new filter that either includes or excludes `Application? Yes` (depending on if you want to show or hide application analytics in a given view.
+Then create a new view in Google Analytics of type 'Application'. You will then need to filter the data for that view by creating a new filter that either includes or excludes `Application? Yes` (depending on if you want to show(includes) or hide(excludes) application analytics in a given view).
 
 ![Google Analytics Setup](https://i.imgur.com/ZDZ3ZPO.png)
 
