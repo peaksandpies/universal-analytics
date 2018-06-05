@@ -1,5 +1,6 @@
 # Acceptable parameters
 
+
 ## Protocol Version
 
 Pass as: `protocolVersion` or `v`
@@ -288,7 +289,7 @@ Optional. Specifies the event category. Must not be empty.
 
 Pass as: `eventAction` or `ea`
 
-Optional.Specifies the event action.Must not be empty.
+Optional. Specifies the event action. Must not be empty.
 
 
 ## Event Label
@@ -442,7 +443,7 @@ Optional. Specifies the time it took for a page to load. The value is in millise
 
 Pass as: `dnsTime` or `dns`
 
-Optional. Specifies the time it took to do a DNS lookup.The value is in milliseconds.
+Optional. Specifies the time it took to do a DNS lookup. The value is in milliseconds.
 
 
 ## Page Download Time

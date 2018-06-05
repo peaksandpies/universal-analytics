@@ -46,16 +46,16 @@ Initialization expects at least your Google Analytics account ID:
 var visitor = ua('UA-XXXX-XX');
 ```
 
-This will create a `universal-analytics` Visitor instance that you can use and keep around to track a specific user. Since no user UUID was specified in the constructor's arguments, a random UUID is generated. In case you have a user UUID at hand, you can use that to create the visitor:
+This will create a `universal-analytics` Visitor instance that you can use and keep around to track a specific client (Not to be confused with the Google Analytics User ID, see [Setting persistent parameters](#setting-persistent-parameters) for more information on that). Since no client ID was specified in the constructor's arguments, a random UUID is generated. In case you have a client ID at hand, you can use that to create the visitor:
 
 ```javascript
 var visitor = ua('UA-XXXX-XX', '6a14abda-6b12-4578-bf66-43c754eaeda9');
 ```
 
-Starting with Universal Analytics, a UUID v4 is the preferred user ID format. It is therefor necessary to provide a UUID of such type to `universal-analytics`. However you can force custom user ID, passing `strictCidFormat: false` in the options:
+Starting with Universal Analytics, a UUID v4 is the preferred client ID format. It is therefor necessary to provide a UUID of such type to `universal-analytics`. However you can force custom client ID, passing `strictCidFormat: false` in the options:
 
 ```javascript
-var visitor = ua('UA-XXXX-XX', 'CUSTOM_USERID_1', {strictCidFormat: false});
+var visitor = ua('UA-XXXX-XX', 'CUSTOM_CLIENTID_1', {strictCidFormat: false});
 ```
 
 If you want to use Google Analytics in https protocol, just include it in the options `https: true`, by default will use http:
@@ -540,11 +540,10 @@ var visitor = ua.createFromSession(socket.handshake.session);
 
 # Debug mode
 
-`universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
+`universal-analytics` is using the [`debug`](https://www.npmjs.com/package/debug) library. It can be instructed to output information during tracking by setting the `DEBUG` environment variable:
 
-```javascript
-var visitor = ua("UA-XXXX-XX").debug()
-// … and so forth.
+```
+DEBUG=universal-analytics
 ```
 
 

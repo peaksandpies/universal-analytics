@@ -1,5 +1,4 @@
 
-var _ = require("underscore");
 var request = require("request");
 var qs = require("querystring");
 var uuid = require("uuid");
