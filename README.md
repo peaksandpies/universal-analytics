@@ -540,11 +540,10 @@ var visitor = ua.createFromSession(socket.handshake.session);
 
 # Debug mode
 
-`universal-analytics` can be instructed to output information during tracking by enabling the debug mode:
+`universal-analytics` is using the [`debug`](https://www.npmjs.com/package/debug) library. It can be instructed to output information during tracking by setting the `DEBUG` environment variable:
 
-```javascript
-var visitor = ua("UA-XXXX-XX").debug()
-// … and so forth.
+```
+DEBUG=universal-analytics
 ```
 
 
