@@ -187,7 +187,7 @@ Pass as: `javaEnabled` or `je`
 Optional. Specifies whether Java was enabled.
 
 
-##Flash Version
+## Flash Version
 
 Pass as: `flashVersion` or `fl`
 
@@ -320,7 +320,7 @@ Pass as: `transactionAffiliation` or `ta`
 Optional. Specifies the affiliation or store name.
 
 
-##Transaction Revenue
+## Transaction Revenue
 
 Pass as: `transactionRevenue` or `tr`
 
