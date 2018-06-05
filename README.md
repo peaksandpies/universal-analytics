@@ -505,17 +505,16 @@ In this example the event category ("Mail Server") is not repeated in the second
 Some parameters should be in every tracking call, such as a user ID or custom dimensions that never or hardly change. For such situations a `#set(key, value)` method is available
 
 ```javascript
-  visitor.set("uid", "123456789")
+  visitor.set("uid", "123456789");
 ```
 
 The uid parameter will be part of every tracking request of that visitor from now on.
 
+For custom dimensions, you will not pass `dimension#` rather `cd#`:
 
-
-
-
-
-
+```javascript
+ visitor.set("cd[1-20]", "123456789"); // [1-20] will be the dimension number
+```
 
 # Session-based identification
 
