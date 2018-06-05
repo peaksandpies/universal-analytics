@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "debug": "^3.0.0",
-    "request": "2.x",
+    "request": "2.86.0",
     "uuid": "^3.0.0"
   },
   "devDependencies": {
