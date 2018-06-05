@@ -1,5 +1,13 @@
 # History
 
+## 0.4.17
+
+- Default to `https` instead of `http` when submitting data to Google Analytics
+- Switched from custom debugger to [debug](https://www.npmjs.com/package/debug) module
+
+Deprecated:
+- `.debug()` is now deprecated in favor of setting the DEBUG environment variable: `DEBUG=universal-analytics`
+
 ## 0.4.16
 
 - Removed async, underscore dependencies
