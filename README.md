@@ -5,7 +5,7 @@ A node module for Google's [Universal Analytics](http://support.google.com/analy
 
 This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
 
-[![Build Status](https://travis-ci.org/peaksandpies/universal-analytics.png?branch=master)](https://travis-ci.org/peaksandpies/universal-analytics)
+[![npm version](https://badge.fury.io/js/universal-analytics.svg)](https://www.npmjs.com/package/universal-analytics) [![Build Status](https://travis-ci.org/peaksandpies/universal-analytics.png?branch=master)](https://travis-ci.org/peaksandpies/universal-analytics)
 
 
 # Table of Contents
@@ -21,6 +21,7 @@ This module allows tracking data (or rather, users) from within a Node.js applic
     - [Transaction items](#transaction-item-tracking)
 - [Daisy-chaining tracking calls](#daisy-chaining-tracking-calls)
 - [Setting persistent parameters](#setting-persistent-parameters)
+- [Filter application tracking data](#filter-application-tracking-data)
 - [Session-based identification](#session-based-identification)
 - [Debug mode](#debug-mode)
 - [Request Options](#request-options)
@@ -38,6 +39,9 @@ $ npm install universal-analytics
 
 ```javascript
 var ua = require('universal-analytics');
+
+// Or with ES6 import
+import ua from 'universal-analytics'
 ```
 
 Initialization expects at least your Google Analytics account ID:
@@ -515,6 +519,18 @@ For custom dimensions, you will not pass `dimension#` rather `cd#`:
 ```javascript
  visitor.set("cd[1-20]", "123456789"); // [1-20] will be the dimension number
 ```
+
+# Filter application tracking data
+
+Set a persistent parameter for [`Data Source`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#ds) to `app` in order to mark tracking data as `Application`.
+
+```javascript
+ visitor.set("ds", "app"); // Allows filtering by the 'Application?' field in GA
+```
+
+Then create a new view in Google Analytics of type 'Application'. You will then need to filter the data for that view by creating a new filter that either includes or excludes `Application? Yes` (depending on if you want to show(includes) or hide(excludes) application analytics in a given view).
+
+![Google Analytics Setup](https://i.imgur.com/ZDZ3ZPO.png)
 
 # Session-based identification
 
