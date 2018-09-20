@@ -67,6 +67,13 @@ If you want to use Google Analytics in http protocol, just include it in the opt
 var visitor = ua('UA-XXXX-XX', {http: true});
 ```
 
+If you want to set User Id you can add it into options:
+```javascript
+var visitor = ua('UA-XXXX-XX', {uid: 'as8eknlll'});
+```
+[see about User Id](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#uid)
+
+
 Tracking a pageview without much else is now very simple:
 
 ```javascript
