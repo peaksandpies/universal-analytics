@@ -1,9 +1,12 @@
 # History
 
+## 0.4.19
+
+- Updated request package
+
 ## 0.4.18
 
 - Fixed package-lock.json bug
-- Updated request package
 
 ## 0.4.17
 
