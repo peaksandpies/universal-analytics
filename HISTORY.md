@@ -1,5 +1,10 @@
 # History
 
+## 0.4.18
+
+- Fixed package-lock.json bug
+- Updated request package
+
 ## 0.4.17
 
 - Default to `https` instead of `http` when submitting data to Google Analytics
