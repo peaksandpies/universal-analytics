@@ -71,6 +71,11 @@ If you want to set User Id you can add it into options:
 ```javascript
 var visitor = ua('UA-XXXX-XX', {uid: 'as8eknlll'});
 ```
+If you want `universal-analytics` to only use `uid` to identify user and using the clientID, just include the otpions `identifyByUserId: true`. This is usedful for those who mainly track user base on UserId.
+```javascript
+var visitor = ua('UA-XXXX-XX', {uid: 'as8eknlll', identifyByUserId: true});
+```
+
 [see about User Id](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#uid)
 
 
