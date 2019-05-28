@@ -1,14 +1,14 @@
 {
   "name": "universal-analytics",
-  "version": "0.4.20",
-  "description": "A node module for Google's Universal Analytics tracking",
+  "version": "0.4.21",
+  "description": "A crossenv(browser, node) module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:peaksandpies/universal-analytics.git"
+    "url": "git@github.com:alexstep/universal-analytics.git"
   },
   "keywords": [
     "browser",
@@ -28,5 +28,8 @@
     "sinon": "^1.17.7"
   },
   "author": "Jörg Tillmann <joerg@peaksandpies.com>",
+  "contributors": [
+    "Alex Step <to@alexstep.com>"  
+  ],
   "license": "MIT"
 }
