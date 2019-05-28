@@ -1,12 +1,17 @@
 Browser version universal-analytics
 =======
 
+Fork of https://github.com/peaksandpies/universal-analytics
 
-A browser node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
+## Difference
+Webpack bundle size decrease at 1.7MB
+ - `request` replaced to `cross-fetch`
+ - remove `uuid` dependency add https://github.com/heikomat/uuid-browser to lib
+ - remove `querystring` dependency add https://github.com/alexstep/universal-analytics/blob/master/lib/querystring.js
 
-This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
 
-[![npm version](https://badge.fury.io/js/universal-analytics.svg)](https://www.npmjs.com/package/universal-analytics) [![Build Status](https://travis-ci.org/peaksandpies/universal-analytics.png?branch=master)](https://travis-ci.org/peaksandpies/universal-analytics)
+# About
+A *browser and node* module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
 
 
 # Table of Contents
