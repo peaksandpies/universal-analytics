@@ -11,15 +11,15 @@
     "url": "git@github.com:peaksandpies/universal-analytics.git"
   },
   "keywords": [
+    "browser",
     "google",
     "analytics",
     "universal",
     "tracking"
   ],
   "dependencies": {
-    "debug": "^3.0.0",
-    "request": "^2.88.0",
-    "uuid": "^3.0.0"
+    "cross-fetch": "^3.0.3",
+    "debug": "^3.0.0"
   },
   "devDependencies": {
     "should": "*",
