@@ -2,7 +2,7 @@ Browser version universal-analytics
 =======
 
 
-A node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
+A browser node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
 
 This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
 
