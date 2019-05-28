@@ -4,7 +4,7 @@
   "description": "A node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/event"
+    "test": "mocha ./test/"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,10 @@
     "debug": "^3.0.0"
   },
   "devDependencies": {
+    "mocha": "*",
+    "request": "^2.88.0",
     "should": "*",
-    "sinon": "^1.17.7",
-    "mocha": "*"
+    "sinon": "^1.17.7"
   },
   "author": "Jörg Tillmann <joerg@peaksandpies.com>",
   "license": "MIT"

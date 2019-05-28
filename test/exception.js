@@ -1,10 +1,10 @@
 
-var request = require("request");
-var qs = require("querystring");
-var uuid = require("uuid");
+// var request = require("request");
+// var qs = require("querystring");
+// var uuid = require("uuid");
 var should = require("should");
 var sinon = require("sinon");
-var url = require("url");
+// var url = require("url");
 
 var ua = require("../lib/index.js");
 var utils = require("../lib/utils.js")
