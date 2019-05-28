@@ -9,6 +9,11 @@ Webpack bundle size decrease at 1.7MB
  - remove `uuid` dependency add https://github.com/heikomat/uuid-browser to lib
  - remove `querystring` dependency add https://github.com/alexstep/universal-analytics/blob/master/lib/querystring.js
 
+### Before
+![before](https://raw.githubusercontent.com/alexstep/universal-analytics/master/why-fork/before.png)
+### After
+![after](https://raw.githubusercontent.com/alexstep/universal-analytics/master/why-fork/after.png)
+
 
 # About
 A *browser and node* module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
