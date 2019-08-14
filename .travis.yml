@@ -3,6 +3,8 @@ node_js:
   - "4"
   - "6"
   - "8"
+  - "10"
+  - "12"
 
 before_install:
   - npm install -g npm
