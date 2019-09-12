@@ -1,6 +1,9 @@
 Browser version universal-analytics
 =======
 
+https://www.npmjs.com/package/cross-ga
+
+
 Fork of https://github.com/peaksandpies/universal-analytics
 
 ## Difference
