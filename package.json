@@ -1,6 +1,6 @@
 {
   "name": "cross-ga",
-  "version": "0.4.21",
+  "version": "0.4.22",
   "description": "A browser and node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
