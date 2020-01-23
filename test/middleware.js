@@ -63,6 +63,17 @@ describe("ua", function () {
 
 			req.visitor.cid.should.equal("46218180.1366882461", "The client ID should've been extracted from the cookie")
 		})
+		
+		it("should allow changing the variable name on req", function() {
+			var req = {cookies: {_ga: "GA1.2.46218180.1366882461"}}
+			var options = {nameOverride: "banana"}
+			var middleware = ua.middleware("tid", options)
+			var next = sinon.spy()
+
+			middleware(req, {}, next)
+
+			req.banana.cid.should.equal("46218180.1366882461", "The request should have the UA visitor instance on the non-default variable name")
+		})
 
 
 		it("should store the cid in the session", function () {
