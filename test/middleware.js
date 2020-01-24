@@ -66,7 +66,7 @@ describe("ua", function () {
 		
 		it("should allow changing the variable name on req", function() {
 			var req = {cookies: {_ga: "GA1.2.46218180.1366882461"}}
-			var options = {nameOverride: "banana"}
+			var options = {instanceName: "banana"}
 			var middleware = ua.middleware("tid", options)
 			var next = sinon.spy()
 
