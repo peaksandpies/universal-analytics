@@ -1,31 +1,35 @@
 {
-  "name": "universal-analytics",
-  "version": "0.4.20",
-  "description": "A node module for Google's Universal Analytics tracking",
+  "name": "cross-ga",
+  "version": "0.4.22",
+  "description": "A browser and node module for Google's Universal Analytics tracking",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "mocha ./test/"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:peaksandpies/universal-analytics.git"
+    "url": "git@github.com:alexstep/universal-analytics.git"
   },
   "keywords": [
+    "browser",
     "google",
     "analytics",
     "universal",
     "tracking"
   ],
   "dependencies": {
-    "debug": "^3.0.0",
-    "request": "^2.88.0",
-    "uuid": "^3.0.0"
+    "cross-fetch": "^3.0.3",
+    "debug": "^3.0.0"
   },
   "devDependencies": {
+    "mocha": "*",
+    "request": "^2.88.0",
     "should": "*",
-    "sinon": "^1.17.7",
-    "mocha": "*"
+    "sinon": "^1.17.7"
   },
   "author": "Jörg Tillmann <joerg@peaksandpies.com>",
+  "contributors": [
+    "Alex Step <to@alexstep.com>"  
+  ],
   "license": "MIT"
 }
