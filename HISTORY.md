@@ -1,5 +1,13 @@
 # History
 
+## 0.4.21
+
+- Upgraded request to native-request
+
+## 0.4.20
+
+- Maintenance release
+
 ## 0.4.19
 
 - Updated request package
