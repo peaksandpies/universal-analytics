@@ -1,5 +1,5 @@
 
-var request = require("request");
+var request = require("native-request");
 var qs = require("querystring");
 var uuid = require("uuid");
 var should = require("should");
@@ -18,7 +18,7 @@ describe("ua", function () {
 		var _enqueue;
 
 		beforeEach(function () {
-			_enqueue = sinon.stub(ua.Visitor.prototype, "_enqueue", function (type, params, fn) {
+			_enqueue = sinon.stub(ua.Visitor.prototype, "_enqueue").callsFake(function (type, params, fn) {
 				if (fn) {
 					(typeof fn).should.equal('function', "#_enqueue should receive a callback")
 					fn();
