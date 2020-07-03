@@ -1,5 +1,9 @@
 # History
 
+## 0.4.22
+
+- Pin native-request version to 1.0.5
+
 ## 0.4.21
 
 - Upgraded request to native-request
