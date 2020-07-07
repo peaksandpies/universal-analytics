@@ -19,7 +19,7 @@ describe("ua", function () {
 		var _enqueue;
 
 		beforeEach(function () {
-			_enqueue = sinon.stub(ua.Visitor.prototype, "_enqueue").callsFake(function () {
+			_enqueue = sinon.stub(ua.Visitor.prototype, "_enqueue", function () {
 				if (arguments.length === 3 && typeof arguments[2] === 'function') {
 					arguments[2]();
 				}
