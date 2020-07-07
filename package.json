@@ -19,7 +19,7 @@
   "dependencies": {
     "debug": "^4.1.1",
     "uuid": "^8.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "should": "*",
