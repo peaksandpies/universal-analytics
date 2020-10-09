@@ -4,7 +4,7 @@ Browser&NodeJS module for Google's Universal Analytics
 https://www.npmjs.com/package/cross-ga
 
 
-Fork of https://github.com/peaksandpies/cross-ga
+Fork of https://github.com/peaksandpies/universal-analytics
 
 ## Difference
 Webpack bundle size decrease at 1.7MB
