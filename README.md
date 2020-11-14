@@ -1,6 +1,10 @@
 universal-analytics
 =======
 
+Setting up a new property in Google Analytics? follow these instructions to get your UA-xxxx code.    
+https://support.google.com/analytics/answer/9304153#UA
+
+
 A node module for Google's [Universal Analytics](http://support.google.com/analytics/bin/answer.py?hl=en&hlrm=de&answer=2790010) tracking via the [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/).
 
 This module allows tracking data (or rather, users) from within a Node.js application. Tracking is initiated on the server side and, if required, does not require any more tracking in the browser.
