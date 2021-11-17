@@ -1,5 +1,4 @@
 
-var request = require("request");
 var qs = require("querystring");
 var uuid = require("uuid");
 var should = require("should");
@@ -7,8 +6,9 @@ var sinon = require("sinon");
 var url = require("url");
 
 var ua = require("../lib/index.js");
-var utils = require("../lib/utils.js")
-var config = require("../lib/config.js")
+var utils = require("../lib/utils.js");
+var config = require("../lib/config.js");
+var request = require("../lib/request");
 
 
 describe("ua", function () {
@@ -63,7 +63,7 @@ describe("ua", function () {
 
 			req.visitor.cid.should.equal("46218180.1366882461", "The client ID should've been extracted from the cookie")
 		})
-		
+
 		it("should allow changing the variable name on req", function() {
 			var req = {cookies: {_ga: "GA1.2.46218180.1366882461"}}
 			var options = {instanceName: "banana"}
