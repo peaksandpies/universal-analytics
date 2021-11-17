@@ -556,7 +556,10 @@ var app = express()
 express.use(ua.middleware("UA-XXXX-Y", {cookieName: '_ga'}));
 ```
 
-The middleware will attach the `universal analytics` visitor instance to every request (`req.visitor`).
+The middleware will attach the `universal analytics` visitor instance to every request with the default name of `req.visitor`. The name of the instance on the `req` object can be overridden to avoid name conflicts by passing in `instanceName` on the `options` object:
+```javascript
+express.use(ua.middleware("UA-XXXX-Y", {instanceName: 'uaVisitor'}));
+ ```
 
 Additionally, the module also exposes a `createFromSession` method to create a visitor instance simply based on a session, which is helpful when working with Socket.io, etc. where the middleware is not used.
 
