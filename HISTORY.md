@@ -1,5 +1,13 @@
 # History
 
+## 0.5
+
+- Removed request dependency
+- Updated Readme
+- Added nodejs 10 and 12 in travis tests
+- Option to override default instance name
+- Invalid configuration key in README file.
+
 ## 0.4.22
 
 - Pin native-request version to 1.0.5
