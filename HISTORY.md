@@ -1,5 +1,9 @@
 # History
 
+## 0.5.1
+
+- Fixed bug that caused requests to fail
+
 ## 0.5
 
 - Removed request dependency
