@@ -1,5 +1,10 @@
 # History
 
+## 0.5.2
+
+- Upgraded debug to 4.3.1
+- Improved documentation
+
 ## 0.5.1
 
 - Fixed bug that caused requests to fail
