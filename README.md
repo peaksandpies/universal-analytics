@@ -63,17 +63,17 @@ var visitor = ua('UA-XXXX-XX', '6a14abda-6b12-4578-bf66-43c754eaeda9');
 Starting with Universal Analytics, a UUID v4 is the preferred client ID format. It is therefor necessary to provide a UUID of such type to `universal-analytics`. However you can force custom client ID, passing `strictCidFormat: false` in the options:
 
 ```javascript
-var visitor = ua('UA-XXXX-XX', 'CUSTOM_CLIENTID_1', {strictCidFormat: false});
+var visitor = ua('UA-XXXX-XX', 'CUSTOM_CLIENTID_1', { strictCidFormat: false });
 ```
 
-If you want to use Google Analytics in http protocol, just include it in the options `https: true`, by default will use https:
+If you want to force the HTTP protocol instead of HTTPS,  include `http: true` in the options, by default this module will use https:
 ```javascript
-var visitor = ua('UA-XXXX-XX', {https: true});
+var visitor = ua('UA-XXXX-XX', { http: true });
 ```
 
 If you want to set User Id you can add it into options:
 ```javascript
-var visitor = ua('UA-XXXX-XX', {uid: 'as8eknlll'});
+var visitor = ua('UA-XXXX-XX', { uid: 'as8eknlll'});
 ```
 [see about User Id](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#uid)
 
