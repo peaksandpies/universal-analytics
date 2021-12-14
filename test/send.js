@@ -17,7 +17,7 @@ describe("ua", function () {
 		var post;
 
 		beforeEach(function () {
-			post = sinon.stub(request, "post").callsArg(2);
+			post = sinon.stub(request, "post").callsArg(3);
 		});
 
 		afterEach(function () {
@@ -57,7 +57,7 @@ describe("ua", function () {
 					Math.random(); // I have absolutely no idea why it fails unless there was some processing to be done after url.parse…
 
 					(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
-					args[1].body.should.equal(qs.stringify(params));
+					args[1].should.equal(qs.stringify(params));
 				}
 
 				done();
@@ -147,7 +147,7 @@ describe("ua", function () {
 					var args = post.args[0];
 
 					var params = paramSets;
-					var formParams = args[1].body.split("\n");
+					var formParams = args[1].split("\n");
 					formParams.should.have.lengthOf(3);
 					formParams[0].should.equal(qs.stringify(params[0]));
 
@@ -172,7 +172,7 @@ describe("ua", function () {
 
 					fn.args[0].should.eql([null, 2], "no error, 2 requests");
 
-					var body = post.args[0][1].body;
+					var body = post.args[0][1];
 
 					body.split("\n").should.have.lengthOf(2);
 
@@ -198,13 +198,12 @@ describe("ua", function () {
 				post.calledOnce.should.equal(true, "request should have been POSTed");
 
 				var parsedUrl = url.parse(post.args[0][0]);
-				var options = post.args[0][1];
+				var headers = post.args[0][2];
 
 				(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
 
-				options.should.have.keys("headers","body")
-				options.headers.should.have.key("User-Agent");
-				options.headers["User-Agent"].should.equal("Test User Agent");
+				headers.should.have.key("User-Agent");
+				headers["User-Agent"].should.equal("Test User Agent");
 
 				done();
 			});
