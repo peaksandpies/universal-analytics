@@ -1,5 +1,11 @@
 # History
 
+## 0.5.3
+
+- Refactored request sending to no use JSON.stringify
+- Removed chapter regarding requestOptions that are no longer available since 0.5
+- Fixed UUID test errors
+
 ## 0.5.2
 
 - Upgraded debug to 4.3.1
