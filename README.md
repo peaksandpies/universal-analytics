@@ -578,15 +578,7 @@ DEBUG=universal-analytics
 
 # Request Options
 
-In order to add additional options to the request a `requestOptions` hash can be provided as part of the constructor options. `unviversal-analytics` uses the [`request`](https://www.npmjs.com/package/request) library. Therefor [any option available for that library](https://www.npmjs.com/package/request#requestoptions-callback) can be provided via the `requestOptions`.
-
-```javascript
-var visitor = ua('UA-XXXX-XX', {
-  requestOptions: {
-    proxy: "…"
-  }
-});
-```
+Due to the removal of the `request` package, request options are no longer available as of 0.5.
 
 
 # Shortcuts
