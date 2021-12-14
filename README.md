@@ -212,7 +212,7 @@ visitor.event("Event Category", "Event Action", "…and a label", 42, function (
 An additional attribute for events is the path of the page they should be associated with in Google Analytics. You can provide this path via an additional params object:
 
 ```javascript
-visitor.event("Event Category", "Event Action", "…and a label", 42, {p: "/contact"}, function (err) {
+visitor.event("Event Category", "Event Action", "…and a label", 42, {dp: "/contact"}, function (err) {
   // …
 })
 ```
@@ -486,7 +486,7 @@ This is the same as two distinct tracking calls.
 
 ```javascript
 visitor.pageview("/landing-page-1").send()
-visitor.event("Testing", "Button color", "Blue", {p: "/landing-page-1"}).send()
+visitor.event("Testing", "Button color", "Blue", {dp: "/landing-page-1"}).send()
 ```
 
 Daisy-chaining is context-aware and in this case placing the `event()` call right after the `pageview()` call results in the event being associated with the page path tracking in the `pageview()` call. Even though the attributes (`dp` and `p`)  are different internally.
