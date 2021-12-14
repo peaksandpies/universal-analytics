@@ -10,6 +10,7 @@ var utils = require("../lib/utils.js");
 var config = require("../lib/config.js");
 var request = require("../lib/request");
 
+const v4Regex = new RegExp(/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i);
 
 describe("ua", function () {
 
@@ -85,16 +86,10 @@ describe("ua", function () {
 			cid: "custom-format-cid"
 		};
 
-		var next = sinon.spy(uuid, 'v4')
-
 		var visitor = ua(options);
 
-		next.calledOnce.should.equal(true, "next() should've been called once")
-		var generatedCid = next.returnValues[0]
-		uuid.v4.restore()
-
 		visitor.cid.should.not.equal(options.cid)
-		visitor.cid.should.equal(generatedCid)
+		visitor.cid.should.match(v4Regex)
 	});
 
 	it("should accept custom cid format when strictCidFormat is false", function () {
@@ -104,12 +99,7 @@ describe("ua", function () {
 			strictCidFormat: false
 		};
 
-		var next = sinon.spy(uuid, 'v4')
-
 		var visitor = ua(options);
-
-		next.called.should.equal(false, "next() should't be called")
-		uuid.v4.restore()
 
 		visitor.cid.should.equal(options.cid)
 	});
