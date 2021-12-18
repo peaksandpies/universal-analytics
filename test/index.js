@@ -104,6 +104,41 @@ describe("ua", function () {
 		visitor.cid.should.equal(options.cid)
 	});
 
+	context("identifyByUserId", function() {
+		var uuidV4Spy
+		before(function() {
+			uuidV4Spy = sinon.spy(uuid, 'v4')
+		})
+		after(function() {
+			uuidV4Spy.restore()
+		})
+		afterEach(function() {
+			uuidV4Spy.reset()
+		})
+		it("should not genereate cid if uid exists and identifyByUserId is true", function() {
+			var options = {
+				tid: "UA-XXXXX-XX",
+				uid: "some-user-id",
+				identifyByUserId: true
+			};
+
+			var visitor = ua(options);
+			uuidV4Spy.calledOnce.should.equal(false);
+			visitor.should.not.have.property("cid")
+		});
+
+		it("should still generate new cid (UUID) if identifyByUserId is true but uid does not exist", function () {
+			var options = {
+				tid: "UA-XXXXX-XX",
+				identifyByUserId: true
+			};
+
+			var visitor = ua(options);
+			uuidV4Spy.calledOnce.should.equal(true, "uuid.v4 should've been called once");
+			utils.isUuid(visitor.cid).should.equal(true, "A valid random UUID should have been generated")
+		});
+	})
+
 
 	describe("params", function () {
 
