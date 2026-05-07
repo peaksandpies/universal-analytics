@@ -1,5 +1,11 @@
 # History
 
+## 0.5.4
+
+- Cleaned up dp/p parameter mixup
+- Fixed tests
+- Bumped dependencies
+
 ## 0.5.3
 
 - Refactored request sending to no use JSON.stringify
