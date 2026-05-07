@@ -50,7 +50,7 @@ describe("ua", function () {
 			_enqueue.args[1][1].should.have.keys("dp", "cd1")
 
 			_enqueue.args[2][0].should.equal("event");
-			_enqueue.args[2][1].should.have.keys("ec", "ea", "p", "cd1")
+			_enqueue.args[2][1].should.have.keys("ec", "ea", "dp", "cd1")
 		});
 
 	});

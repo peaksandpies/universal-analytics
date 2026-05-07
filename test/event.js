@@ -215,7 +215,7 @@ describe("ua", function () {
 			fn.calledOnce.should.equal(true, "callback should have been called once")
 		});
 
-		it("should use the dp attribute as p for providing a event path", function () {
+		it("should pass dp through for providing an event path", function () {
 			var params = {
 				ec: Math.random().toString(),
 				ea: Math.random().toString(),
@@ -227,10 +227,10 @@ describe("ua", function () {
 
 			_enqueue.calledOnce.should.equal(true, "#_enqueue should have been called once");
 			_enqueue.args[0][0].should.equal("event");
-			_enqueue.args[0][1].should.have.keys("ec", "ea", "p")
+			_enqueue.args[0][1].should.have.keys("ec", "ea", "dp")
 			_enqueue.args[0][1].ec.should.equal(params.ec);
 			_enqueue.args[0][1].ea.should.equal(params.ea);
-			_enqueue.args[0][1].p.should.equal(params.dp);
+			_enqueue.args[0][1].dp.should.equal(params.dp);
 
 			JSON.stringify(params).should.equal(json, "params should not have been modified")
 		});
@@ -289,8 +289,8 @@ describe("ua", function () {
 
 			_enqueue.calledThrice.should.equal(true, "#_enqueue should have been called twice, once for the pageview, once for the pageview");
 
-			_enqueue.args[1][1].p.should.equal(path)
-			_enqueue.args[2][1].p.should.equal(path)
+			_enqueue.args[1][1].dp.should.equal(path)
+			_enqueue.args[2][1].dp.should.equal(path)
 		})
 
 		it("should fail without event category", function () {
